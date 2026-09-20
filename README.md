@@ -107,3 +107,5 @@ pytest                # 89 tests: engine, planner guard rails, server, SSRF, tie
 * Legal pages are drafts, not legal advice.
 
 See `CHANGELOG.md` for every bug fixed in the original notebook, and `docs/monetization.md` for the earning model.
+
+Built by **Ishan Makkar** -- https://github.com/iishanmakkar/dc-mcp

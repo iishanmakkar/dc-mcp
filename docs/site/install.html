@@ -160,7 +160,7 @@
 
             <li class="flex items-center gap-2" data-sd-id="21"><iconify-icon icon="lucide:check-circle" class="text-indigo-500"></iconify-icon> The server is hosted at <code class="bg-indigo-100 px-1.5 py-0.5 rounded text-indigo-700 font-mono text-sm">dc-mcp-26zy.onrender.com</code></li>
 
-            <li class="flex items-center gap-2" data-sd-id="22"><iconify-icon icon="lucide:check-circle" class="text-indigo-500"></iconify-icon> Replace <code>YOUR_API_KEY</code> with your unique key from the dashboard</li>
+            <li class="flex items-center gap-2" data-sd-id="22"><iconify-icon icon="lucide:check-circle" class="text-indigo-500"></iconify-icon> No API key needed — point your client at the endpoint below (key holders get the full tier)</li>
 
           </ul>
 
@@ -254,7 +254,7 @@
 
                     <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="50">3</span>
 
-                    <span data-sd-id="51">Paste the JSON configuration snippet provided on the right, ensuring you replace the API key placeholder.</span>
+                    <span data-sd-id="51">Paste the JSON configuration snippet provided on the right — no API key needed.</span>
 
                   </li>
 
@@ -279,10 +279,7 @@
                   <pre class="code-block rounded-2xl p-6 text-sm leading-relaxed overflow-x-auto" data-sd-id="57">{
   "mcpServers": {
     "agentic-data-cleaner": {
-      "url": "https://dc-mcp-26zy.onrender.com/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
-      }
+      "url": "https://dc-mcp-26zy.onrender.com/mcp"
     }
   }
 }</pre>
@@ -371,7 +368,7 @@
 
             <div class="px-6 pb-6 text-sm text-slate-600" data-sd-id="75">
 
-              <p data-sd-id="76">Your <code>YOUR_API_KEY</code> does not match our records. Ensure you've copied the full key from your dashboard and that it includes no leading or trailing spaces.</p>
+              <p data-sd-id="76">A 401 means the key you sent is wrong. Keyless access needs no <code>Authorization</code> header at all — remove it, or fix the key.</p>
 
             </div>
 
@@ -430,10 +427,11 @@
           <a id="footer-terms" href="https://dc-mcp-26zy.onrender.com/terms" class="hover:text-slate-600" data-sd-id="94">Terms</a>
 
           <a id="footer-api" href="https://dc-mcp-26zy.onrender.com/healthz" class="hover:text-slate-600" data-sd-id="95">API Status</a>
+          <a id="footer-github" href="https://github.com/iishanmakkar/dc-mcp" class="hover:text-slate-600" data-sd-id="95">GitHub</a>
 
         </div>
 
-        <p class="text-sm text-slate-400" data-sd-id="96">© 2026 Agentic Data Cleaner. All rights reserved.</p>
+        <p class="text-sm text-slate-400" data-sd-id="96">© 2026 Agentic Data Cleaner · Built by Ishan Makkar. All rights reserved.</p>
 
       </div>
 
