@@ -1,0 +1,10 @@
+pandas>=2.2
+numpy>=1.26
+openpyxl>=3.1
+pyarrow>=15
+tabulate>=0.9
+fastapi>=0.121
+uvicorn[standard]>=0.30
+mcp>=2.0,<3
+markdown>=3.5
+PyJWT[crypto]>=2.8  # only needed when AUTH_MODE=oauth/either with OAUTH_* set; harmless otherwise

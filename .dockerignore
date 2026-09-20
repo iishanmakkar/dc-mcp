@@ -1,0 +1,8 @@
+.git
+.env
+tests
+input
+output
+sample_data
+*.ipynb
+__pycache__

@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic Data Cleaner MCP | About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    
+    :root {
+      --indigo-accent: #4f46e5;
+      --emerald-accent: #10b981;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fafafa;
+      color: #1a1a1a;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--indigo-accent), var(--emerald-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .arch-line {
+      background: repeating-linear-gradient(90deg, #e5e7eb, #e5e7eb 10px, transparent 10px, transparent 20px);
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen" data-sd-id="1">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100" data-sd-id="2">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between" data-sd-id="3">
+        <div class="flex items-center gap-2" data-sd-id="4">
+          <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center" data-sd-id="5">
+            <iconify-icon icon="lucide:sparkles" class="text-white text-xl"></iconify-icon>
+          </div>
+          <span class="font-bold text-xl tracking-tight" data-sd-id="6">Agentic<span class="text-indigo-600" data-sd-id="7">Data</span></span>
+        </div>
+        <div class="flex items-center gap-8" data-sd-id="8">
+          <a href="#" id="nav-features" class="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors" data-sd-id="9">Features</a>
+          <a href="#" id="nav-pricing" class="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors" data-sd-id="10">Pricing</a>
+          <a href="#" id="nav-docs" class="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors" data-sd-id="11">Documentation</a>
+          <a href="#" id="nav-login" class="px-5 py-2.5 bg-indigo-600 text-white rounded-full text-sm font-semibold hover:bg-indigo-700 transition-all shadow-sm" data-sd-id="12">Get Started</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-32 pb-20" data-sd-id="13">
+      <!-- Hero Section / Explainer -->
+      <section class="max-w-7xl mx-auto px-6 mb-24 text-center" data-sd-id="14">
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6 max-w-4xl mx-auto leading-[1.1]" data-sd-id="15">
+          One protocol to rule your <span class="gradient-text" data-sd-id="16">Messy Data</span>.
+        </h1>
+        <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed" data-sd-id="17">
+          Agentic Data Cleaner is a dedicated MCP server that empowers AI models to sanitize, normalize, and validate datasets with deterministic precision.
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-8 text-left max-w-5xl mx-auto" data-sd-id="18">
+          <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm" data-sd-id="19">
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2" data-sd-id="20">
+              <iconify-icon icon="lucide:message-square" class="text-indigo-600"></iconify-icon>
+              What is MCP?
+            </h3>
+            <p class="text-gray-600 leading-relaxed" data-sd-id="21">
+              The Model Context Protocol (MCP) is an open standard that allows LLMs to connect with external tools securely. Instead of writing custom code for every integration, MCP provides a unified way for models like Claude to "reach out" and perform actions.
+            </p>
+          </div>
+          <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm" data-sd-id="22">
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2" data-sd-id="23">
+              <iconify-icon icon="lucide:layers" class="text-emerald-600"></iconify-icon>
+              Our Role
+            </h3>
+            <p class="text-gray-600 leading-relaxed" data-sd-id="24">
+              We act as the bridge between your agent and your raw data. When an agent needs to clean a CSV or fix phone formats, it calls our MCP server. We execute the logic deterministically and return the polished result.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture Strip -->
+      <section class="bg-gray-50 py-20 border-y border-gray-100 mb-24 overflow-hidden" data-sd-id="25">
+        <div class="max-w-7xl mx-auto px-6" data-sd-id="26">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-12" data-sd-id="27">
+            <div class="flex flex-col items-center group" data-sd-id="28">
+              <div class="w-24 h-24 bg-white rounded-2xl shadow-md flex items-center justify-center border border-gray-200 transition-transform group-hover:-translate-y-1" data-sd-id="29">
+                <iconify-icon icon="lucide:cpu" class="text-4xl text-indigo-500"></iconify-icon>
+              </div>
+              <p class="mt-4 font-semibold" data-sd-id="30">Deterministic Engine</p>
+              <span class="text-xs text-gray-400 mono uppercase" data-sd-id="31">Logic Layer</span>
+            </div>
+
+            <div class="hidden md:block flex-1 h-px arch-line relative" data-sd-id="32">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-gray-50 text-[10px] font-bold text-gray-400 tracking-widest" data-sd-id="33">JSON-RPC</div>
+            </div>
+
+            <div class="flex flex-col items-center group" data-sd-id="34">
+              <div class="w-24 h-24 bg-indigo-600 rounded-2xl shadow-xl flex items-center justify-center transition-transform group-hover:-translate-y-1" data-sd-id="35">
+                <iconify-icon icon="lucide:share-2" class="text-4xl text-white"></iconify-icon>
+              </div>
+              <p class="mt-4 font-semibold text-indigo-600" data-sd-id="36">REST API</p>
+              <span class="text-xs text-gray-400 mono uppercase" data-sd-id="37">/api/v1/*</span>
+            </div>
+
+            <div class="hidden md:block flex-1 h-px arch-line relative" data-sd-id="38">
+               <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-gray-50 text-[10px] font-bold text-gray-400 tracking-widest" data-sd-id="39">TRANSPORT</div>
+            </div>
+
+            <div class="flex flex-col items-center group" data-sd-id="40">
+              <div class="w-24 h-24 bg-emerald-500 rounded-2xl shadow-xl flex items-center justify-center transition-transform group-hover:-translate-y-1" data-sd-id="41">
+                <iconify-icon icon="lucide:terminal" class="text-4xl text-white"></iconify-icon>
+              </div>
+              <p class="mt-4 font-semibold text-emerald-600" data-sd-id="42">MCP Endpoint</p>
+              <span class="text-xs text-gray-400 mono uppercase" data-sd-id="43">/mcp</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tools Grid -->
+      <section class="max-w-7xl mx-auto px-6 mb-24" data-sd-id="44">
+        <div class="flex items-end justify-between mb-12" data-sd-id="45">
+          <div data-sd-id="46">
+            <h2 class="text-3xl font-bold mb-2" data-sd-id="47">Protocol Tools</h2>
+            <p class="text-gray-500" data-sd-id="48">Standardized functions exposed to your model context.</p>
+          </div>
+        </div>
+        
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4" data-sd-id="49">
+          <!-- Tool 1 -->
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="50">
+            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 mb-4" data-sd-id="51">Read-Only</span>
+            <h4 class="font-bold mb-1" data-sd-id="52">analyze_schema</h4>
+            <p class="text-xs text-gray-500" data-sd-id="53">Detect data types and null ratios.</p>
+          </div>
+          <!-- Tool 2 -->
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="54">
+            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-orange-50 text-orange-600 mb-4" data-sd-id="55">Approval</span>
+            <h4 class="font-bold mb-1" data-sd-id="56">prune_duplicates</h4>
+            <p class="text-xs text-gray-500" data-sd-id="57">Remove rows based on fuzzy matching.</p>
+          </div>
+          <!-- Tool 3 -->
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="58">
+            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 mb-4" data-sd-id="59">Read-Only</span>
+            <h4 class="font-bold mb-1" data-sd-id="60">validate_email</h4>
+            <p class="text-xs text-gray-500" data-sd-id="61">Check SMTP reachability and syntax.</p>
+          </div>
+          <!-- Tool 4 -->
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="62">
+            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-50 text-red-600 mb-4" data-sd-id="63">Destructive</span>
+            <h4 class="font-bold mb-1" data-sd-id="64">drop_column</h4>
+            <p class="text-xs text-gray-500" data-sd-id="65">Permanent removal of specific fields.</p>
+          </div>
+          <!-- Tool 5 -->
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="66">
+            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-orange-50 text-orange-600 mb-4" data-sd-id="67">Approval</span>
+            <h4 class="font-bold mb-1" data-sd-id="68">format_phones</h4>
+            <p class="text-xs text-gray-500" data-sd-id="69">Standardize to E.164 format.</p>
+          </div>
+          <!-- Tool 6 -->
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="70">
+            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 mb-4" data-sd-id="71">Read-Only</span>
+            <h4 class="font-bold mb-1" data-sd-id="72">geo_lookup</h4>
+            <p class="text-xs text-gray-500" data-sd-id="73">Enrich addresses with coordinates.</p>
+          </div>
+          <!-- Tool 7 -->
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="74">
+            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-orange-50 text-orange-600 mb-4" data-sd-id="75">Approval</span>
+            <h4 class="font-bold mb-1" data-sd-id="76">impute_missing</h4>
+            <p class="text-xs text-gray-500" data-sd-id="77">Fill nulls using mean/median/mode.</p>
+          </div>
+          <!-- Tool 8 -->
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="78">
+            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 mb-4" data-sd-id="79">Read-Only</span>
+            <h4 class="font-bold mb-1" data-sd-id="80">text_summarize</h4>
+            <p class="text-xs text-gray-500" data-sd-id="81">Extract metadata from long strings.</p>
+          </div>
+          <!-- Tool 9 -->
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="82">
+            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-50 text-red-600 mb-4" data-sd-id="83">Destructive</span>
+            <h4 class="font-bold mb-1" data-sd-id="84">scrub_pii</h4>
+            <p class="text-xs text-gray-500" data-sd-id="85">Redact personal information via regex.</p>
+          </div>
+          <!-- Tool 10 -->
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="86">
+            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 mb-4" data-sd-id="87">Read-Only</span>
+            <h4 class="font-bold mb-1" data-sd-id="88">get_data_types</h4>
+            <p class="text-xs text-gray-500" data-sd-id="89">Infers column logic for DB casting.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Safety Cards -->
+      <section class="max-w-7xl mx-auto px-6 mb-24" data-sd-id="90">
+        <h2 class="text-3xl font-bold mb-10 text-center" data-sd-id="91">Enterprise Grade Safety</h2>
+        <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6" data-sd-id="92">
+          <div class="p-6 bg-indigo-50/30 rounded-2xl border border-indigo-100" data-sd-id="93">
+            <iconify-icon icon="lucide:key" class="text-2xl text-indigo-600 mb-4"></iconify-icon>
+            <h5 class="font-bold mb-2" data-sd-id="94">Bearer Auth</h5>
+            <p class="text-sm text-gray-600" data-sd-id="95">Standardized authorization for every request.</p>
+          </div>
+          <div class="p-6 bg-indigo-50/30 rounded-2xl border border-indigo-100" data-sd-id="96">
+            <iconify-icon icon="lucide:shield-check" class="text-2xl text-indigo-600 mb-4"></iconify-icon>
+            <h5 class="font-bold mb-2" data-sd-id="97">Client Isolation</h5>
+            <p class="text-sm text-gray-600" data-sd-id="98">Logical separation of all processing workflows.</p>
+          </div>
+          <div class="p-6 bg-indigo-50/30 rounded-2xl border border-indigo-100" data-sd-id="99">
+            <iconify-icon icon="lucide:clock" class="text-2xl text-indigo-600 mb-4"></iconify-icon>
+            <h5 class="font-bold mb-2" data-sd-id="100">One-Hour Expiry</h5>
+            <p class="text-sm text-gray-600" data-sd-id="101">Processing artifacts are purged every 60 mins.</p>
+          </div>
+          <div class="p-6 bg-indigo-50/30 rounded-2xl border border-indigo-100" data-sd-id="102">
+            <iconify-icon icon="lucide:globe" class="text-2xl text-indigo-600 mb-4"></iconify-icon>
+            <h5 class="font-bold mb-2" data-sd-id="103">SSRF Guard</h5>
+            <p class="text-sm text-gray-600" data-sd-id="104">Guarded URL fetching prevents internal leaks.</p>
+          </div>
+          <div class="p-6 bg-indigo-50/30 rounded-2xl border border-indigo-100" data-sd-id="105">
+            <iconify-icon icon="lucide:eye-off" class="text-2xl text-indigo-600 mb-4"></iconify-icon>
+            <h5 class="font-bold mb-2" data-sd-id="106">Zero Log Policy</h5>
+            <p class="text-sm text-gray-600" data-sd-id="107">No actual data content is ever written to logs.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Table -->
+      <section class="max-w-4xl mx-auto px-6 mb-24" data-sd-id="108">
+        <div class="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm" data-sd-id="109">
+          <table class="w-full text-left border-collapse" data-sd-id="110">
+            <thead data-sd-id="111">
+              <tr class="bg-gray-50/50" data-sd-id="112">
+                <th class="p-6 font-bold text-gray-900 border-b border-gray-100" data-sd-id="113">Feature</th>
+                <th class="p-6 font-bold text-gray-900 border-b border-gray-100" data-sd-id="114">Free Tier</th>
+                <th class="p-6 font-bold text-indigo-600 border-b border-gray-100" data-sd-id="115">Pro Tier</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm" data-sd-id="116">
+              <tr data-sd-id="117">
+                <td class="p-6 border-b border-gray-50 font-medium" data-sd-id="118">Daily Requests</td>
+                <td class="p-6 border-b border-gray-50" data-sd-id="119">1,000 req/day</td>
+                <td class="p-6 border-b border-gray-50 text-indigo-600" data-sd-id="120">Unlimited</td>
+              </tr>
+              <tr data-sd-id="121">
+                <td class="p-6 border-b border-gray-50 font-medium" data-sd-id="122">Payload Size</td>
+                <td class="p-6 border-b border-gray-50" data-sd-id="123">5 MB</td>
+                <td class="p-6 border-b border-gray-50 text-indigo-600" data-sd-id="124">500 MB</td>
+              </tr>
+              <tr data-sd-id="125">
+                <td class="p-6 border-b border-gray-50 font-medium" data-sd-id="126">Custom Rulesets</td>
+                <td class="p-6 border-b border-gray-50" data-sd-id="127"><iconify-icon icon="lucide:x" class="text-gray-300"></iconify-icon></td>
+                <td class="p-6 border-b border-gray-50 text-emerald-500" data-sd-id="128"><iconify-icon icon="lucide:check"></iconify-icon></td>
+              </tr>
+              <tr data-sd-id="129">
+                <td class="p-6 border-b border-gray-50 font-medium" data-sd-id="130">Priority Queue</td>
+                <td class="p-6 border-b border-gray-50" data-sd-id="131"><iconify-icon icon="lucide:x" class="text-gray-300"></iconify-icon></td>
+                <td class="p-6 border-b border-gray-50 text-emerald-500" data-sd-id="132"><iconify-icon icon="lucide:check"></iconify-icon></td>
+              </tr>
+              <tr data-sd-id="133">
+                <td class="p-6 font-medium" data-sd-id="134">SLA Support</td>
+                <td class="p-6 text-gray-400 font-normal" data-sd-id="135">Community</td>
+                <td class="p-6 text-indigo-600 font-bold" data-sd-id="136">24/7 Priority</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 py-12" data-sd-id="137">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8" data-sd-id="138">
+        <div class="flex items-center gap-2" data-sd-id="139">
+          <div class="w-6 h-6 bg-indigo-600 rounded flex items-center justify-center" data-sd-id="140">
+            <iconify-icon icon="lucide:sparkles" class="text-white text-sm"></iconify-icon>
+          </div>
+          <span class="font-bold text-gray-900" data-sd-id="141">Agentic Data</span>
+        </div>
+        
+        <div class="flex gap-8" data-sd-id="142">
+          <a href="#" id="footer-privacy" class="text-sm text-gray-500 hover:text-indigo-600" data-sd-id="143">Privacy Policy</a>
+          <a href="#" id="footer-terms" class="text-sm text-gray-500 hover:text-indigo-600" data-sd-id="144">Terms of Service</a>
+          <a href="#" id="footer-support" class="text-sm text-gray-500 hover:text-indigo-600" data-sd-id="145">Support Desk</a>
+        </div>
+
+        <div class="text-sm text-gray-400" data-sd-id="146">
+          ┬⌐ 2024 Agentic Data Cleaner. Built for the MCP Ecosystem.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body></html>

@@ -1,0 +1,28 @@
+# Render blueprint. Deploy steps:
+#   1. Push this folder to a GitHub repo, then in Render: New + -> Blueprint -> pick the repo.
+#   2. After the first deploy, Render shows the service URL -- put it into PUBLIC_BASE_URL /
+#      ALLOWED_HOSTS below (or edit them in the dashboard) and redeploy once.
+#   3. Copy the generated API_KEYS value from the dashboard -> Environment.
+#   4. python tools/preflight.py https://<service>.onrender.com <API key>
+
+services:
+  - type: web
+    name: agentic-data-cleaner
+    runtime: docker
+    plan: starter
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: API_KEYS
+        generateValue: true          # read it in the dashboard and keep it secret
+      # Edit these two lines to your real Render URL after the first deploy:
+      - key: PUBLIC_BASE_URL
+        value: https://agentic-data-cleaner.onrender.com
+      - key: ALLOWED_HOSTS
+        value: agentic-data-cleaner.onrender.com
+      - key: BILLING_ENABLED
+        value: "false"               # everyone gets the paid plan until you switch this on
+      - key: AUTH_MODE
+        value: "key"                 # key | oauth | either
+      - key: ALLOW_ANONYMOUS
+        value: "false"               # never true in production (server refuses to start open)

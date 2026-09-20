@@ -1,0 +1,31 @@
+# Fly.io deploy config. Steps (from this folder, with the fly CLI installed):
+#   1. fly launch --no-deploy                      (accept the generated app name or pick one)
+#   2. fly secrets set API_KEYS="$(python -c 'import secrets; print(secrets.token_urlsafe(32))')"
+#   3. Edit [env] below to your real *.fly.dev hostname, then:  fly deploy
+#   4. python tools/preflight.py https://<app>.fly.dev <the API key>
+# The app is single-process on purpose (datasets live in memory) -- do not raise max_machines_running.
+
+app = "agentic-data-cleaner"          # <-- your app name; the public URL is https://<app>.fly.dev
+primary_region = "iad"
+
+[build]
+
+[env]
+  # Set these to the SAME <app>.fly.dev host after step 1, then deploy again:
+  # PUBLIC_BASE_URL = "https://<app>.fly.dev"
+  # ALLOWED_HOSTS   = "<app>.fly.dev"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = "suspend"
+  auto_start_machines = true
+  min_machines_running = 1          # keeps the single in-memory store warm
+  processes = ["app"]
+
+  [[http_service.checks]]
+    interval = "30s"
+    timeout = "5s"
+    grace_period = "10s"
+    method = "get"
+    path = "/healthz"
