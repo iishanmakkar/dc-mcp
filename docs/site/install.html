@@ -461,6 +461,41 @@ error and what you tried. Docs: https://dc-mcp-26zy.onrender.com/install
           </button>
         </div>
       </section>
+      <!-- Antigravity setup -->
+      <section class="mb-20" data-sd-id="103">
+        <h2 class="text-2xl font-bold text-slate-900 mb-3" data-sd-id="104">Add to Antigravity</h2>
+        <p class="text-slate-600 text-sm mb-6 max-w-2xl" data-sd-id="105">
+          No API key needed. Merge this entry into your <code>mcp_config.json</code> — global file
+          <code>~/.gemini/config/mcp_config.json</code> (all projects) or workspace
+          <code>.agents/mcp_config.json</code> (this project only). Keep your existing servers; just add this one inside <code>"mcpServers"</code>.
+        </p>
+        <div class="relative group mb-6" data-sd-id="106">
+          <pre id="agy-snippet-text" class="code-block rounded-2xl p-6 text-sm leading-relaxed overflow-x-auto" data-sd-id="107">{
+  "mcpServers": {
+    "agentic-data-cleaner": {
+      "serverUrl": "https://dc-mcp-26zy.onrender.com/mcp"
+    }
+  }
+}</pre>
+          <button onclick="navigator.clipboard.writeText(document.getElementById('agy-snippet-text').innerText);this.textContent='Copied';setTimeout(()=>this.textContent='Copy Snippet',1200);" class="absolute top-4 right-4 bg-slate-800 hover:bg-slate-700 text-white p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 text-xs" data-sd-id="108">
+            Copy Snippet
+          </button>
+        </div>
+        <ol class="space-y-4 text-sm text-slate-600" data-sd-id="109">
+          <li class="flex gap-3" data-sd-id="110">
+            <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="111">1</span>
+            <span data-sd-id="112">In Antigravity open the agent side panel → <strong>… → MCP Servers → Manage MCP Servers → View raw config</strong>.</span>
+          </li>
+          <li class="flex gap-3" data-sd-id="113">
+            <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="114">2</span>
+            <span data-sd-id="115">Paste the snippet above inside <code>"mcpServers"</code>, save the file, then hit <strong>Refresh</strong>.</span>
+          </li>
+          <li class="flex gap-3" data-sd-id="116">
+            <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="117">3</span>
+            <span data-sd-id="118">Ask the agent to <em>“clean this CSV with the data cleaner”</em> — it will call <code>clean_dataset</code> and hand you the download link.</span>
+          </li>
+        </ol>
+      </section>
     </main>
 
 
