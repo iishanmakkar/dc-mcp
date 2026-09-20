@@ -21,8 +21,10 @@ services:
       - key: ALLOWED_HOSTS
         value: dc-mcp-26zy.onrender.com
       - key: BILLING_ENABLED
-        value: "false"               # everyone gets the paid plan until you switch this on
+        value: "true"                # visitors get the free tier (5 files/day, 2 MB, CSV); your key stays full via PAID_CLIENTS
+      - key: PAID_CLIENTS
+        value: "k_91dbe95e8293908f"  # hashed id of the operator key -> full tier even with billing on
       - key: AUTH_MODE
         value: "key"                 # key | oauth | either
       - key: ALLOW_ANONYMOUS
-        value: "false"               # never true in production (server refuses to start open)
+        value: "true"                # public connector: keyless visitors admitted, isolated per IP; wrong keys still rejected

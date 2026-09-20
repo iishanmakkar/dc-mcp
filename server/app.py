@@ -6,12 +6,17 @@ Works anywhere, not just Muse: the MCP endpoint at /mcp is plain Streamable HTTP
 and any MCP client (Muse, Claude Desktop, ChatGPT developer mode, Cursor,
 VS Code, mcp-inspector, ...) can connect with `Authorization: Bearer <key>`.
 Auth is pluggable (see server/auth.py): AUTH_MODE=key (default), oauth, or either.
-Free launch: BILLING_ENABLED=false gives every client the full tier.
+With ALLOW_ANONYMOUS=true keyless visitors are admitted too, each isolated by a
+hashed id of their source IP (a wrong key is still rejected). Billing gates the
+free tier (see docs/monetization.md); with BILLING_ENABLED=false everyone gets
+the full tier.
 """
 from __future__ import annotations
 
+import hashlib
 import logging
 import pathlib
+import secrets
 from contextlib import asynccontextmanager
 from typing import Any, Dict, List, Optional
 
@@ -22,7 +27,7 @@ from fastapi.responses import HTMLResponse, JSONResponse, Response
 from mcp.server.transport_security import TransportSecuritySettings
 from pydantic import BaseModel, Field
 
-from .auth import build_authenticator
+from .auth import Principal, build_authenticator
 from .config import Settings, get_settings
 from .mcp_tools import build_mcp, current_client, current_principal
 from .quota import QuotaError
@@ -85,6 +90,9 @@ def create_app(settings: Optional[Settings] = None) -> FastAPI:
         raise ValueError(f"AUTH_MODE must be 'key', 'oauth' or 'either', got {s.auth_mode!r}")
     svc = Service(s)
     auth = build_authenticator(s)
+    # Salt for per-visitor anonymous ids. Random per process: on restart all
+    # anonymous buckets (and their in-memory datasets) are forgotten together.
+    anon_salt = secrets.token_hex(8)
     if auth.open and not s.allow_anonymous:
         # Fail closed at SERVE time (see lifespan below): importing this module
         # with no credentials (tests, tooling) stays safe; serving refuses.
@@ -127,7 +135,15 @@ def create_app(settings: Optional[Settings] = None) -> FastAPI:
         # actual MCP calls are POST and always require a credential.
         info_page = path == "/mcp" and request.method == "GET"
         if path != "/" and not path.startswith(PUBLIC_PREFIXES) and not info_page and request.method != "OPTIONS":
-            principal = auth.authenticate(request.headers.get("authorization", ""))
+            header = request.headers.get("authorization", "")
+            principal = auth.authenticate(header)
+            if principal is None and s.allow_anonymous and not header.strip():
+                # Public mode: no credential sent -> admit as an anonymous visitor
+                # isolated by source IP (hashed; raw IPs never logged or stored).
+                # A WRONG key is still rejected below -- only a missing one is let in.
+                ip = request.client.host if request.client else "unknown"
+                cid = "anon_" + hashlib.sha256(f"{anon_salt}:{ip}".encode()).hexdigest()[:16]
+                principal = Principal(cid, "anonymous")
             if principal is None:
                 scheme = "Bearer"
                 if s.auth_mode == "oauth" and s.oauth_issuer:
