@@ -155,7 +155,7 @@
 
             <p class="text-gray-600 leading-relaxed" data-sd-id="21">
 
-              The Model Context Protocol (MCP) is an open standard that allows LLMs to connect with external tools securely. Instead of writing custom code for every integration, MCP provides a unified way for models like Claude to "reach out" and perform actions.
+              The Model Context Protocol (MCP) is an open standard for connecting AI assistants to external tools. Three roles: the <strong>host</strong> (your app, e.g. Claude Desktop), its <strong>client</strong>, and the <strong>server</strong> (like this one). They speak JSON-RPC 2.0 over a transport such as Streamable HTTP: the client sends <em>initialize</em>, lists capabilities, then calls tools by name — the server executes and returns results. <a class="text-indigo-600 font-semibold" href="https://modelcontextprotocol.info/docs/">Official docs</a>.
 
             </p>
 
@@ -173,7 +173,7 @@
 
             <p class="text-gray-600 leading-relaxed" data-sd-id="24">
 
-              We act as the bridge between your agent and your raw data. When an agent needs to clean a CSV or fix phone formats, it calls our MCP server. We execute the logic deterministically and return the polished result.
+              We act as the bridge between your agent and your raw data. When an agent needs to clean a CSV, it calls one of our 10 tools — pure deterministic code, no AI model in the loop. Every tool carries risk annotations (read-only, destructive, needs-approval), so the assistant knows what is safe and what must ask you first.
 
             </p>
 
@@ -235,7 +235,7 @@
 
             <div class="hidden md:block flex-1 h-px arch-line relative" data-sd-id="38">
 
-               <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-gray-50 text-[10px] font-bold text-gray-400 tracking-widest" data-sd-id="39">TRANSPORT</div>
+               <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-gray-50 text-[10px] font-bold text-gray-400 tracking-widest" data-sd-id="39">STREAMABLE HTTP</div>
 
             </div>
 
@@ -262,6 +262,30 @@
       </section>
 
 
+
+      <!-- Call lifecycle -->
+      <section class="max-w-7xl mx-auto px-6 mb-24" data-sd-id="43b">
+        <h2 class="text-3xl font-bold mb-2 text-center" data-sd-id="43c">One Call, Four Steps</h2>
+        <p class="text-gray-500 text-center mb-10" data-sd-id="43d">The exact lifecycle every request follows — per the MCP specification.</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-sd-id="43e">
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl" data-sd-id="43f">
+            <p class="mono text-xs text-indigo-600 font-bold mb-2" data-sd-id="43g">1 · INITIALIZE</p>
+            <p class="text-sm text-gray-600" data-sd-id="43h">Client and server agree on protocol version 2025-06-18 and capabilities.</p>
+          </div>
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl" data-sd-id="43i">
+            <p class="mono text-xs text-indigo-600 font-bold mb-2" data-sd-id="43j">2 · TOOLS/LIST</p>
+            <p class="text-sm text-gray-600" data-sd-id="43k">Assistant discovers the 10 tools, their schemas and risk annotations.</p>
+          </div>
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl" data-sd-id="43l">
+            <p class="mono text-xs text-indigo-600 font-bold mb-2" data-sd-id="43m">3 · TOOLS/CALL</p>
+            <p class="text-sm text-gray-600" data-sd-id="43n">Safe fixes apply at once; destructive ones return for your approval.</p>
+          </div>
+          <div class="p-6 bg-white border border-gray-100 rounded-2xl" data-sd-id="43o">
+            <p class="mono text-xs text-indigo-600 font-bold mb-2" data-sd-id="43p">4 · DOWNLOAD</p>
+            <p class="text-sm text-gray-600" data-sd-id="43q">Time-limited links serve the cleaned file, audit report and replay script.</p>
+          </div>
+        </div>
+      </section>
 
       <!-- Tools Grid -->
 
