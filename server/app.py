@@ -123,7 +123,10 @@ def create_app(settings: Optional[Settings] = None) -> FastAPI:
     @app.middleware("http")
     async def guard(request: Request, call_next):
         path = request.url.path
-        if path != "/" and not path.startswith(PUBLIC_PREFIXES) and request.method != "OPTIONS":
+        # GET /mcp is a human-readable info page (browsers, link previews); the
+        # actual MCP calls are POST and always require a credential.
+        info_page = path == "/mcp" and request.method == "GET"
+        if path != "/" and not path.startswith(PUBLIC_PREFIXES) and not info_page and request.method != "OPTIONS":
             principal = auth.authenticate(request.headers.get("authorization", ""))
             if principal is None:
                 scheme = "Bearer"
@@ -292,6 +295,23 @@ def create_app(settings: Optional[Settings] = None) -> FastAPI:
     @app.get("/about", include_in_schema=False)
     def about():
         return _site("about.html")
+
+    @app.get("/mcp", include_in_schema=False)
+    def mcp_info():
+        # Browsers GET this URL when someone "visits" the endpoint. It is not a
+        # web page to use -- it explains how an MCP client connects instead.
+        return JSONResponse({
+            "service": "Agentic Data Cleaner",
+            "mcp_endpoint": f"{s.public_base_url}/mcp",
+            "transport": "Streamable HTTP (MCP JSON-RPC via POST)",
+            "how_to_connect": [
+                "1. Copy your API key from the server operator.",
+                "2. In your AI client (Muse, Claude Desktop, ChatGPT, Cursor, VS Code, Opencode), "
+                "add a remote MCP server with the mcp_endpoint URL above.",
+                f"3. Send header 'Authorization: Bearer <your key>' with every request. Full guide: {s.public_base_url}/install",
+            ],
+            "try_it": f"POST {s.public_base_url}/mcp with method 'tools/list'",
+        })
 
     # --------------------------------------- universal MCP discovery (any client)
     def _manifest() -> Dict[str, Any]:
