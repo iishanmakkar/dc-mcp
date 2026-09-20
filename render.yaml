@@ -17,9 +17,9 @@ services:
         generateValue: true          # read it in the dashboard and keep it secret
       # Edit these two lines to your real Render URL after the first deploy:
       - key: PUBLIC_BASE_URL
-        value: https://agentic-data-cleaner.onrender.com
+        value: https://dc-mcp-26zy.onrender.com
       - key: ALLOWED_HOSTS
-        value: agentic-data-cleaner.onrender.com
+        value: dc-mcp-26zy.onrender.com
       - key: BILLING_ENABLED
         value: "false"               # everyone gets the paid plan until you switch this on
       - key: AUTH_MODE

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "agentic-data-cleaner": {
+      "type": "remote",
+      "url": "https://dc-mcp-26zy.onrender.com/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer exOLaBJwdU7B8XrOqrNRnH8LTAyFpZlgYflyM6JLlZI"
+      }
+    }
+  }
+}

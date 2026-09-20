@@ -108,7 +108,7 @@
 
                     <a href="#pricing" id="nav-pricing" class="hover:text-indigo-600 transition-colors" data-sd-id="11">Pricing</a>
 
-                    <a href="#docs" id="nav-docs" class="hover:text-indigo-600 transition-colors" data-sd-id="12">Docs</a>
+                    <a href="/about" id="nav-docs" class="hover:text-indigo-600 transition-colors" data-sd-id="12">Docs</a>
 
                 </div>
 
@@ -148,7 +148,7 @@
 
                         </span>
 
-                        v1.2 MCP Server Now Available
+                        v2.0 MCP Server Now Available
 
                     </div>
 
@@ -208,7 +208,7 @@
 
                             <div class="ml-4 px-3 py-1 bg-white border border-slate-200 rounded-md text-xs text-slate-400 font-mono" data-sd-id="35">
 
-                                claud-mcp-server: agentic-data-cleaner
+                                mcp server: agentic-data-cleaner
 
                             </div>
 
@@ -248,11 +248,11 @@
 
                                         <ul class="space-y-1 text-xs" data-sd-id="45">
 
-                                            <li data-sd-id="46">ΓÇó 12 Mixed date formats found in <code>Order Date</code></li>
+                                            <li data-sd-id="46">• 12 Mixed date formats found in <code>Order Date</code></li>
 
-                                            <li data-sd-id="47">ΓÇó 4 Missing values in <code>Revenue</code> column</li>
+                                            <li data-sd-id="47">• 4 Missing values in <code>Revenue</code> column</li>
 
-                                            <li data-sd-id="48">ΓÇó 2 Inconsistent categorizations in <code>Status</code></li>
+                                            <li data-sd-id="48">• 2 Inconsistent categorizations in <code>Status</code></li>
 
                                         </ul>
 
@@ -368,7 +368,7 @@
 
                         <p class="text-slate-600 text-sm leading-relaxed" data-sd-id="94">
 
-                            Automatically identifies duplicates, inconsistent terminology, outliers, and formatting errors using heuristic and LLM analysis.
+                            Automatically identifies duplicates, inconsistent terminology, outliers, and formatting errors using deterministic checks — no AI model in the loop.
 
                         </p>
 
@@ -468,7 +468,7 @@
 
                         <p class="text-slate-600 text-sm leading-relaxed" data-sd-id="114">
 
-                            Export cleaning sequences as Python or SQL scripts so you can integrate the same transformations into your production pipelines.
+                            Export cleaning sequences as standalone Python scripts and re-run them on next month's file.
 
                         </p>
 
@@ -550,7 +550,7 @@
 
                     <div class="text-xs font-mono bg-slate-800 px-3 py-1.5 rounded border border-slate-700" data-sd-id="138">
 
-                        Endpoint: /mcp/agentic-cleaner
+                        Endpoint: https://dc-mcp-26zy.onrender.com/mcp
 
                     </div>
 
@@ -688,7 +688,7 @@
 
                                 <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
 
-                                Unlimited local files
+                                5 files per day · 2 MB · CSV export
 
                             </li>
 
@@ -704,7 +704,7 @@
 
                                 <iconify-icon icon="lucide:x" class="text-slate-300"></iconify-icon>
 
-                                Cloud storage sync
+                                Audit report of every change
 
                             </li>
 
@@ -712,13 +712,13 @@
 
                                 <iconify-icon icon="lucide:x" class="text-slate-300"></iconify-icon>
 
-                                Shared team cleaning history
+                                Large files + all formats
 
                             </li>
 
                         </ul>
 
-                        <a href="#" id="price-free-link" class="w-full py-3 text-center border border-slate-200 font-bold rounded-xl hover:bg-slate-50 transition-colors" data-sd-id="203">View Repo</a>
+                        <a href="https://github.com/iishanmakkar/dc-mcp" id="price-free-link" class="w-full py-3 text-center border border-slate-200 font-bold rounded-xl hover:bg-slate-50 transition-colors" data-sd-id="203">View Repo</a>
 
                     </div>
 
@@ -732,13 +732,13 @@
 
                             <h3 class="text-xl font-bold mb-2" data-sd-id="207">Standard Managed</h3>
 
-                            <p class="text-slate-500 text-sm" data-sd-id="208">Pre-configured and always ready.</p>
+                            <p class="text-slate-500 text-sm" data-sd-id="208">Full power for real files.</p>
 
                             <div class="mt-6 flex items-baseline gap-1" data-sd-id="209">
 
-                                <span class="text-4xl font-extrabold text-slate-900" data-sd-id="210">$19</span>
+                                <span class="text-4xl font-extrabold text-slate-900" data-sd-id="210">Free</span>
 
-                                <span class="text-slate-500" data-sd-id="211">/mo</span>
+                                <span class="text-slate-500" data-sd-id="211">during launch</span>
 
                             </div>
 
@@ -758,7 +758,7 @@
 
                                 <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
 
-                                50GB Cloud secure cache
+                                Larger files · 25 MB / 200k rows
 
                             </li>
 
@@ -766,7 +766,7 @@
 
                                 <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
 
-                                Team roles and permissions
+                                Audit report + replay script
 
                             </li>
 
@@ -774,13 +774,13 @@
 
                                 <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
 
-                                API-only mode (No UI required)
+                                All 6 export formats
 
                             </li>
 
                         </ul>
 
-                        <a href="#" id="price-pro-link" class="w-full py-3 text-center bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all" data-sd-id="217">Start Trial</a>
+                        <a href="/install" id="price-pro-link" class="w-full py-3 text-center bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all" data-sd-id="217">Install Now</a>
 
                     </div>
 
@@ -850,7 +850,7 @@
 
                         <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" data-sd-id="230">
 
-                            The self-hosted version is limited only by your local RAM. For the managed version, we support files up to 2GB per project. For larger enterprise needs, we offer custom dedicated clusters.
+                            The self-hosted version is limited only by your local RAM. For the managed version, the paid plan handles files up to 25 MB / 200,000 rows (2 MB on the free plan).
 
                         </div>
 
@@ -890,13 +890,13 @@
 
                             <span class="text-slate-500" data-sd-id="240">$</span>
 
-                            <span data-sd-id="241">npm install -g @agentic-data/cleaner-server</span>
+                            <span data-sd-id="241">https://dc-mcp-26zy.onrender.com/mcp</span>
 
                             <iconify-icon icon="lucide:copy" class="text-slate-400 hover:text-white cursor-pointer"></iconify-icon>
 
                         </div>
 
-                        <a href="#" id="final-docs-btn" class="px-8 py-3 bg-white text-indigo-600 font-bold rounded-xl hover:bg-indigo-50 transition-all" data-sd-id="242">Read Installation Docs</a>
+                        <a href="/install" id="final-docs-btn" class="px-8 py-3 bg-white text-indigo-600 font-bold rounded-xl hover:bg-indigo-50 transition-all" data-sd-id="242">Read Installation Docs</a>
 
                     </div>
 
@@ -938,9 +938,9 @@
 
                         <div class="flex gap-4" data-sd-id="251">
 
-                            <a href="#" id="social-twitter" class="text-slate-400 hover:text-indigo-600 transition-colors" data-sd-id="252"><iconify-icon icon="mdi:twitter" class="text-2xl"></iconify-icon></a>
+                            
 
-                            <a href="#" id="social-github" class="text-slate-400 hover:text-indigo-600 transition-colors" data-sd-id="253"><iconify-icon icon="mdi:github" class="text-2xl"></iconify-icon></a>
+                            <a href="https://github.com/iishanmakkar/dc-mcp" id="social-github" class="text-slate-400 hover:text-indigo-600 transition-colors" data-sd-id="253"><iconify-icon icon="mdi:github" class="text-2xl"></iconify-icon></a>
 
                         </div>
 
@@ -952,13 +952,13 @@
 
                         <ul class="space-y-4 text-sm text-slate-500" data-sd-id="256">
 
-                            <li data-sd-id="257"><a href="#" id="footer-docs" class="hover:text-indigo-600 transition-colors" data-sd-id="258">Documentation</a></li>
+                            <li data-sd-id="257"><a href="/about" id="footer-docs" class="hover:text-indigo-600 transition-colors" data-sd-id="258">Documentation</a></li>
 
-                            <li data-sd-id="259"><a href="#" id="footer-mcp" class="hover:text-indigo-600 transition-colors" data-sd-id="260">MCP Specification</a></li>
+                            <li data-sd-id="259"><a href="https://modelcontextprotocol.io/" id="footer-mcp" class="hover:text-indigo-600 transition-colors" data-sd-id="260">MCP Specification</a></li>
 
-                            <li data-sd-id="261"><a href="#" id="footer-github" class="hover:text-indigo-600 transition-colors" data-sd-id="262">Open Source</a></li>
+                            <li data-sd-id="261"><a href="https://github.com/iishanmakkar/dc-mcp" id="footer-github" class="hover:text-indigo-600 transition-colors" data-sd-id="262">Open Source</a></li>
 
-                            <li data-sd-id="263"><a href="#" id="footer-support" class="hover:text-indigo-600 transition-colors" data-sd-id="264">Support</a></li>
+                            <li data-sd-id="263"><a href="https://dc-mcp-26zy.onrender.com/support" id="footer-support" class="hover:text-indigo-600 transition-colors" data-sd-id="264">Support</a></li>
 
                         </ul>
 
@@ -970,11 +970,11 @@
 
                         <ul class="space-y-4 text-sm text-slate-500" data-sd-id="267">
 
-                            <li data-sd-id="268"><a href="#" id="footer-privacy" class="hover:text-indigo-600 transition-colors" data-sd-id="269">Privacy Policy</a></li>
+                            <li data-sd-id="268"><a href="https://dc-mcp-26zy.onrender.com/privacy" id="footer-privacy" class="hover:text-indigo-600 transition-colors" data-sd-id="269">Privacy Policy</a></li>
 
-                            <li data-sd-id="270"><a href="#" id="footer-terms" class="hover:text-indigo-600 transition-colors" data-sd-id="271">Terms of Service</a></li>
+                            <li data-sd-id="270"><a href="https://dc-mcp-26zy.onrender.com/terms" id="footer-terms" class="hover:text-indigo-600 transition-colors" data-sd-id="271">Terms of Service</a></li>
 
-                            <li data-sd-id="272"><a href="#" id="footer-cookies" class="hover:text-indigo-600 transition-colors" data-sd-id="273">Cookie Policy</a></li>
+                            <li data-sd-id="272"><a href="https://dc-mcp-26zy.onrender.com/privacy" id="footer-cookies" class="hover:text-indigo-600 transition-colors" data-sd-id="273">Cookie Policy</a></li>
 
                         </ul>
 
@@ -984,7 +984,7 @@
 
                 <div class="mt-20 pt-8 border-t border-slate-200 text-center text-xs text-slate-400" data-sd-id="274">
 
-                    ┬⌐ 2024 Agentic Data Cleaner. All rights reserved. Built for the Model Context Protocol ecosystem.
+                    © 2026 Agentic Data Cleaner. All rights reserved. Built for the Model Context Protocol ecosystem.
 
                 </div>
 

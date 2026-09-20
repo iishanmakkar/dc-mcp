@@ -1,230 +1,469 @@
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
-      --font-body: 'Inter', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-    }
-    body {
-      font-family: var(--font-body);
-      background-color: #f8fafc;
-      color: #1e293b;
-    }
-    h1, h2, h3, h4 {
-      font-family: var(--font-sans);
-      letter-spacing: -0.02em;
-    }
-    .glass-card {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(226, 232, 240, 0.8);
-    }
-    .tab-active {
-      border-bottom: 2px solid #6366f1;
-      color: #6366f1;
-    }
-    .code-block {
-      font-family: var(--font-mono);
-      background-color: #0f172a;
-      color: #e2e8f0;
-    }
-    .accent-gradient {
-      background: linear-gradient(135deg, #6366f1 0%, #10b981 100%);
-    }
-  </style>
-</head>
-<body>
-  <div class="min-h-screen bg-slate-50/50" data-sd-id="1">
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200" data-sd-id="2">
-      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between" data-sd-id="3">
-        <div class="flex items-center gap-2" data-sd-id="4">
-          <div class="w-8 h-8 accent-gradient rounded-lg flex items-center justify-center" data-sd-id="5">
-            <iconify-icon icon="lucide:sparkles" class="text-white text-lg"></iconify-icon>
-          </div>
-          <span class="font-extrabold text-xl text-slate-900 tracking-tight" data-sd-id="6">Agentic<span class="text-indigo-600" data-sd-id="7">Cleaner</span></span>
-        </div>
-        <div class="flex items-center gap-6" data-sd-id="8">
-          <a id="nav-docs" href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900" data-sd-id="9">Documentation</a>
-          <a id="nav-support" href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900" data-sd-id="10">Support</a>
-          <button id="nav-dashboard" class="px-4 py-2 bg-slate-900 text-white text-sm font-semibold rounded-full hover:bg-slate-800 transition-all" data-sd-id="11">Dashboard</button>
-        </div>
-      </div>
-    </nav>
-
-    <main class="max-w-5xl mx-auto px-6 py-12" data-sd-id="12">
-      <!-- Header Section -->
-      <header class="mb-12 text-center" data-sd-id="13">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4" data-sd-id="14">
-          Install Agentic Data Cleaner
-        </h1>
-        <p class="text-lg text-slate-600 max-w-2xl mx-auto" data-sd-id="15">
-          Connect your favorite AI tools to our hosted Model Context Protocol (MCP) server to sanitize and structure your data in seconds.
-        </p>
-      </header>
-
-      <!-- Requirements Callout -->
-      <div class="mb-10 bg-indigo-50 border border-indigo-100 rounded-2xl p-6 flex items-start gap-4" data-sd-id="16">
-        <div class="bg-indigo-600/10 p-2 rounded-lg" data-sd-id="17">
-          <iconify-icon icon="lucide:alert-circle" class="text-indigo-600 text-xl"></iconify-icon>
-        </div>
-        <div data-sd-id="18">
-          <h3 class="font-bold text-indigo-900 text-lg" data-sd-id="19">Ready for Production</h3>
-          <ul class="mt-2 space-y-1 text-indigo-800/80" data-sd-id="20">
-            <li class="flex items-center gap-2" data-sd-id="21"><iconify-icon icon="lucide:check-circle" class="text-indigo-500"></iconify-icon> The server is hosted at <code class="bg-indigo-100 px-1.5 py-0.5 rounded text-indigo-700 font-mono text-sm">agentic-data-cleaner.onrender.com</code></li>
-            <li class="flex items-center gap-2" data-sd-id="22"><iconify-icon icon="lucide:check-circle" class="text-indigo-500"></iconify-icon> Replace <code>YOUR_API_KEY</code> with your unique key from the dashboard</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Client Setup Tabs -->
-      <section class="mb-16" data-sd-id="23">
-        <div class="flex items-center justify-between mb-6" data-sd-id="24">
-          <h2 class="text-2xl font-bold text-slate-900" data-sd-id="25">1. Client Configuration</h2>
-          <span class="text-xs font-semibold px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full uppercase tracking-wider" data-sd-id="26">MCP v1.2 Compliant</span>
-        </div>
-        
-        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm" data-sd-id="27">
-          <!-- Tab Navigation -->
-          <div class="flex overflow-x-auto border-b border-slate-100 scrollbar-hide" data-sd-id="28">
-            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap tab-active" data-sd-id="29">Muse</button>
-            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="30">Claude Desktop</button>
-            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="31">ChatGPT</button>
-            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="32">Cursor</button>
-            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="33">VS Code</button>
-            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="34">Opencode</button>
-          </div>
-
-          <!-- Tab Content -->
-          <div class="p-8" data-sd-id="35">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" data-sd-id="36">
-              <div data-sd-id="37">
-                <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2" data-sd-id="38">Endpoint URL</label>
-                <div class="flex items-center gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200 mb-6" data-sd-id="39">
-                  <code class="flex-1 font-mono text-sm text-slate-700 truncate">https://agentic-data-cleaner.onrender.com/mcp</code>
-                  <button class="p-1.5 hover:bg-slate-200 rounded-lg transition-colors" data-sd-id="40">
-                    <iconify-icon icon="lucide:copy" class="text-slate-400"></iconify-icon>
-                  </button>
-                </div>
-                
-                <h4 class="text-sm font-bold text-slate-900 mb-3" data-sd-id="41">Installation Steps:</h4>
-                <ol class="space-y-4 text-sm text-slate-600" data-sd-id="42">
-                  <li class="flex gap-3" data-sd-id="43">
-                    <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="44">1</span>
-                    <span data-sd-id="45">Open Muse settings and navigate to <strong>MCP Plugins</strong>.</span>
-                  </li>
-                  <li class="flex gap-3" data-sd-id="46">
-                    <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="47">2</span>
-                    <span data-sd-id="48">Add a new plugin with name "DataCleaner".</span>
-                  </li>
-                  <li class="flex gap-3" data-sd-id="49">
-                    <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="50">3</span>
-                    <span data-sd-id="51">Paste the JSON configuration snippet provided on the right, ensuring you replace the API key placeholder.</span>
-                  </li>
-                </ol>
-              </div>
-
-              <div data-sd-id="52">
-                <div class="flex items-center justify-between mb-2" data-sd-id="53">
-                  <label class="text-xs font-bold text-slate-400 uppercase tracking-widest" data-sd-id="54">Config Snippet</label>
-                  <span class="text-[10px] font-mono text-slate-400" data-sd-id="55">JSON</span>
-                </div>
-                <div class="relative group" data-sd-id="56">
-                  <pre class="code-block rounded-2xl p-6 text-sm leading-relaxed overflow-x-auto" data-sd-id="57">{
-  "mcpServers": {
-    "agentic-cleaner": {
-      "command": "npx",
-      "args": ["-y", "@agentic/cleaner-mcp"],
-      "env": {
-        "ENDPOINT": "https://agentic-data-cleaner.onrender.com/mcp",
-        "BEARER_TOKEN": "YOUR_API_KEY"
-      }
-    }
-  }
-}</pre>
-                  <button class="absolute top-4 right-4 bg-slate-800 hover:bg-slate-700 text-white p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 text-xs" data-sd-id="58">
-                    <iconify-icon icon="lucide:copy"></iconify-icon>
-                    Copy Snippet
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Big Files Section -->
-      <section class="mb-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-center" data-sd-id="59">
-        <div class="md:col-span-1" data-sd-id="60">
-          <h2 class="text-2xl font-bold text-slate-900 mb-3" data-sd-id="61">2. Large File Processing</h2>
-          <p class="text-slate-600 text-sm leading-relaxed" data-sd-id="62">
-            Processing CSVs or JSONs over 50MB? Use our optimized one-time upload pipe to avoid agent context timeouts.
-          </p>
-        </div>
-        <div class="md:col-span-2" data-sd-id="63">
-          <div class="bg-white border-2 border-dashed border-emerald-200 rounded-3xl p-10 flex flex-col items-center justify-center text-center hover:bg-emerald-50/50 transition-colors cursor-pointer group" data-sd-id="64">
-            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform" data-sd-id="65">
-              <iconify-icon icon="lucide:upload-cloud" class="text-3xl"></iconify-icon>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900" data-sd-id="66">Generate One-Time Upload URL</h3>
-            <p class="text-sm text-slate-500 mt-2 mb-6" data-sd-id="67">Files are automatically purged after 24 hours.</p>
-            <button class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-emerald-200/50" data-sd-id="68">Create Pipeline</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Troubleshooting Accordion -->
-      <section class="mb-20" data-sd-id="69">
-        <h2 class="text-2xl font-bold text-slate-900 mb-8" data-sd-id="70">Troubleshooting</h2>
-        <div class="space-y-3" data-sd-id="71">
-          <!-- Issue 1 -->
-          <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm" data-sd-id="72">
-            <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors group" data-sd-id="73">
-              <span class="font-bold text-slate-800" data-sd-id="74">401: Key Mismatch</span>
-              <iconify-icon icon="lucide:chevron-down" class="text-slate-400 group-hover:text-slate-600 transition-transform"></iconify-icon>
-            </button>
-            <div class="px-6 pb-6 text-sm text-slate-600" data-sd-id="75">
-              <p data-sd-id="76">Your <code>YOUR_API_KEY</code> does not match our records. Ensure you've copied the full key from your dashboard and that it includes no leading or trailing spaces.</p>
-            </div>
-          </div>
-          <!-- Issue 2 -->
-          <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm" data-sd-id="77">
-            <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors group" data-sd-id="78">
-              <span class="font-bold text-slate-800" data-sd-id="79">Connection Failures</span>
-              <iconify-icon icon="lucide:chevron-down" class="text-slate-400 group-hover:text-slate-600 transition-transform"></iconify-icon>
-            </button>
-            <div class="hidden px-6 pb-6 text-sm text-slate-600" data-sd-id="80">
-              <p data-sd-id="81">If you see a network timeout, ensure your firewall allows outbound HTTPS requests to <code>agentic-data-cleaner.onrender.com</code> on port 443.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-slate-200 py-12" data-sd-id="87">
-      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6" data-sd-id="88">
-        <div class="flex items-center gap-2 grayscale opacity-50" data-sd-id="89">
-          <div class="w-6 h-6 accent-gradient rounded flex items-center justify-center" data-sd-id="90">
-            <iconify-icon icon="lucide:sparkles" class="text-white text-xs"></iconify-icon>
-          </div>
-          <span class="font-bold text-slate-900 text-sm tracking-tight" data-sd-id="91">AgenticCleaner</span>
-        </div>
-        <div class="flex gap-8 text-xs font-semibold text-slate-400 uppercase tracking-widest" data-sd-id="92">
-          <a id="footer-privacy" href="#" class="hover:text-slate-600" data-sd-id="93">Privacy</a>
-          <a id="footer-terms" href="#" class="hover:text-slate-600" data-sd-id="94">Terms</a>
-          <a id="footer-api" href="#" class="hover:text-slate-600" data-sd-id="95">API Status</a>
-        </div>
-        <p class="text-sm text-slate-400" data-sd-id="96">┬⌐ 2024 Agentic.ai. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
-
-</body></html>
+<!DOCTYPE html><html lang="en"><head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+      --font-body: 'Inter', sans-serif;
+
+      --font-mono: 'JetBrains Mono', monospace;
+
+    }
+
+    body {
+
+      font-family: var(--font-body);
+
+      background-color: #f8fafc;
+
+      color: #1e293b;
+
+    }
+
+    h1, h2, h3, h4 {
+
+      font-family: var(--font-sans);
+
+      letter-spacing: -0.02em;
+
+    }
+
+    .glass-card {
+
+      background: rgba(255, 255, 255, 0.7);
+
+      backdrop-filter: blur(8px);
+
+      border: 1px solid rgba(226, 232, 240, 0.8);
+
+    }
+
+    .tab-active {
+
+      border-bottom: 2px solid #6366f1;
+
+      color: #6366f1;
+
+    }
+
+    .code-block {
+
+      font-family: var(--font-mono);
+
+      background-color: #0f172a;
+
+      color: #e2e8f0;
+
+    }
+
+    .accent-gradient {
+
+      background: linear-gradient(135deg, #6366f1 0%, #10b981 100%);
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="min-h-screen bg-slate-50/50" data-sd-id="1">
+
+    <!-- Navigation -->
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200" data-sd-id="2">
+
+      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between" data-sd-id="3">
+
+        <div class="flex items-center gap-2" data-sd-id="4">
+
+          <div class="w-8 h-8 accent-gradient rounded-lg flex items-center justify-center" data-sd-id="5">
+
+            <iconify-icon icon="lucide:sparkles" class="text-white text-lg"></iconify-icon>
+
+          </div>
+
+          <span class="font-extrabold text-xl text-slate-900 tracking-tight" data-sd-id="6">Agentic<span class="text-indigo-600" data-sd-id="7">Cleaner</span></span>
+
+        </div>
+
+        <div class="flex items-center gap-6" data-sd-id="8">
+
+          <a id="nav-docs" href="/about" class="text-sm font-medium text-slate-600 hover:text-slate-900" data-sd-id="9">Documentation</a>
+
+          <a id="nav-support" href="https://dc-mcp-26zy.onrender.com/support" class="text-sm font-medium text-slate-600 hover:text-slate-900" data-sd-id="10">Support</a>
+
+          <a id="nav-dashboard" href="/" class="px-4 py-2 bg-slate-900 text-white text-sm font-semibold rounded-full hover:bg-slate-800 transition-all" data-sd-id="11">Home</a>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+
+
+    <main class="max-w-5xl mx-auto px-6 py-12" data-sd-id="12">
+
+      <!-- Header Section -->
+
+      <header class="mb-12 text-center" data-sd-id="13">
+
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4" data-sd-id="14">
+
+          Install Agentic Data Cleaner
+
+        </h1>
+
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto" data-sd-id="15">
+
+          Connect your favorite AI tools to our hosted Model Context Protocol (MCP) server to sanitize and structure your data in seconds.
+
+        </p>
+
+      </header>
+
+
+
+      <!-- Requirements Callout -->
+
+      <div class="mb-10 bg-indigo-50 border border-indigo-100 rounded-2xl p-6 flex items-start gap-4" data-sd-id="16">
+
+        <div class="bg-indigo-600/10 p-2 rounded-lg" data-sd-id="17">
+
+          <iconify-icon icon="lucide:alert-circle" class="text-indigo-600 text-xl"></iconify-icon>
+
+        </div>
+
+        <div data-sd-id="18">
+
+          <h3 class="font-bold text-indigo-900 text-lg" data-sd-id="19">Ready for Production</h3>
+
+          <ul class="mt-2 space-y-1 text-indigo-800/80" data-sd-id="20">
+
+            <li class="flex items-center gap-2" data-sd-id="21"><iconify-icon icon="lucide:check-circle" class="text-indigo-500"></iconify-icon> The server is hosted at <code class="bg-indigo-100 px-1.5 py-0.5 rounded text-indigo-700 font-mono text-sm">dc-mcp-26zy.onrender.com</code></li>
+
+            <li class="flex items-center gap-2" data-sd-id="22"><iconify-icon icon="lucide:check-circle" class="text-indigo-500"></iconify-icon> Replace <code>YOUR_API_KEY</code> with your unique key from the dashboard</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Client Setup Tabs -->
+
+      <section class="mb-16" data-sd-id="23">
+
+        <div class="flex items-center justify-between mb-6" data-sd-id="24">
+
+          <h2 class="text-2xl font-bold text-slate-900" data-sd-id="25">1. Client Configuration</h2>
+
+          <span class="text-xs font-semibold px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full uppercase tracking-wider" data-sd-id="26">MCP Streamable HTTP</span>
+
+        </div>
+
+        
+
+        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm" data-sd-id="27">
+
+          <!-- Tab Navigation -->
+
+          <div class="flex overflow-x-auto border-b border-slate-100 scrollbar-hide" data-sd-id="28">
+
+            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap tab-active" data-sd-id="29">Muse</button>
+
+            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="30">Claude Desktop</button>
+
+            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="31">ChatGPT</button>
+
+            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="32">Cursor</button>
+
+            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="33">VS Code</button>
+
+            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="34">Opencode</button>
+
+          </div>
+
+
+
+          <!-- Tab Content -->
+
+          <div class="p-8" data-sd-id="35">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" data-sd-id="36">
+
+              <div data-sd-id="37">
+
+                <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2" data-sd-id="38">Endpoint URL</label>
+
+                <div class="flex items-center gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200 mb-6" data-sd-id="39">
+
+                  <code class="flex-1 font-mono text-sm text-slate-700 truncate">https://dc-mcp-26zy.onrender.com/mcp</code>
+
+                  <button class="p-1.5 hover:bg-slate-200 rounded-lg transition-colors" data-sd-id="40">
+
+                    <iconify-icon icon="lucide:copy" class="text-slate-400"></iconify-icon>
+
+                  </button>
+
+                </div>
+
+                
+
+                <h4 class="text-sm font-bold text-slate-900 mb-3" data-sd-id="41">Installation Steps:</h4>
+
+                <ol class="space-y-4 text-sm text-slate-600" data-sd-id="42">
+
+                  <li class="flex gap-3" data-sd-id="43">
+
+                    <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="44">1</span>
+
+                    <span data-sd-id="45">Open your AI client's MCP settings and add a remote server entry.</span>
+
+                  </li>
+
+                  <li class="flex gap-3" data-sd-id="46">
+
+                    <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="47">2</span>
+
+                    <span data-sd-id="48">Add a new plugin with name "DataCleaner".</span>
+
+                  </li>
+
+                  <li class="flex gap-3" data-sd-id="49">
+
+                    <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="50">3</span>
+
+                    <span data-sd-id="51">Paste the JSON configuration snippet provided on the right, ensuring you replace the API key placeholder.</span>
+
+                  </li>
+
+                </ol>
+
+              </div>
+
+
+
+              <div data-sd-id="52">
+
+                <div class="flex items-center justify-between mb-2" data-sd-id="53">
+
+                  <label class="text-xs font-bold text-slate-400 uppercase tracking-widest" data-sd-id="54">Config Snippet</label>
+
+                  <span class="text-[10px] font-mono text-slate-400" data-sd-id="55">JSON</span>
+
+                </div>
+
+                <div class="relative group" data-sd-id="56">
+
+                  <pre class="code-block rounded-2xl p-6 text-sm leading-relaxed overflow-x-auto" data-sd-id="57">{
+  "mcpServers": {
+    "agentic-data-cleaner": {
+      "url": "https://dc-mcp-26zy.onrender.com/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      }
+    }
+  }
+}</pre>
+
+                  <button class="absolute top-4 right-4 bg-slate-800 hover:bg-slate-700 text-white p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 text-xs" data-sd-id="58">
+
+                    <iconify-icon icon="lucide:copy"></iconify-icon>
+
+                    Copy Snippet
+
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- Big Files Section -->
+
+      <section class="mb-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-center" data-sd-id="59">
+
+        <div class="md:col-span-1" data-sd-id="60">
+
+          <h2 class="text-2xl font-bold text-slate-900 mb-3" data-sd-id="61">2. Large File Processing</h2>
+
+          <p class="text-slate-600 text-sm leading-relaxed" data-sd-id="62">
+
+            Processing CSVs or JSONs over 2 MB? Use our optimized one-time upload pipe to avoid agent context timeouts.
+
+          </p>
+
+        </div>
+
+        <div class="md:col-span-2" data-sd-id="63">
+
+          <div class="bg-white border-2 border-dashed border-emerald-200 rounded-3xl p-10 flex flex-col items-center justify-center text-center hover:bg-emerald-50/50 transition-colors cursor-pointer group" data-sd-id="64">
+
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform" data-sd-id="65">
+
+              <iconify-icon icon="lucide:upload-cloud" class="text-3xl"></iconify-icon>
+
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-900" data-sd-id="66">Generate One-Time Upload URL</h3>
+
+            <p class="text-sm text-slate-500 mt-2 mb-6" data-sd-id="67">Files are automatically purged after about an hour.</p>
+
+            <a href="/about" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-emerald-200/50" data-sd-id="68">See How It Works</a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- Troubleshooting Accordion -->
+
+      <section class="mb-20" data-sd-id="69">
+
+        <h2 class="text-2xl font-bold text-slate-900 mb-8" data-sd-id="70">Troubleshooting</h2>
+
+        <div class="space-y-3" data-sd-id="71">
+
+          <!-- Issue 1 -->
+
+          <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm" data-sd-id="72">
+
+            <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors group" data-sd-id="73">
+
+              <span class="font-bold text-slate-800" data-sd-id="74">401: Key Mismatch</span>
+
+              <iconify-icon icon="lucide:chevron-down" class="text-slate-400 group-hover:text-slate-600 transition-transform"></iconify-icon>
+
+            </button>
+
+            <div class="px-6 pb-6 text-sm text-slate-600" data-sd-id="75">
+
+              <p data-sd-id="76">Your <code>YOUR_API_KEY</code> does not match our records. Ensure you've copied the full key from your dashboard and that it includes no leading or trailing spaces.</p>
+
+            </div>
+
+          </div>
+
+          <!-- Issue 2 -->
+
+          <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm" data-sd-id="77">
+
+            <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors group" data-sd-id="78">
+
+              <span class="font-bold text-slate-800" data-sd-id="79">Connection Failures</span>
+
+              <iconify-icon icon="lucide:chevron-down" class="text-slate-400 group-hover:text-slate-600 transition-transform"></iconify-icon>
+
+            </button>
+
+            <div class="hidden px-6 pb-6 text-sm text-slate-600" data-sd-id="80">
+
+              <p data-sd-id="81">If you see a network timeout, ensure your firewall allows outbound HTTPS requests to <code>dc-mcp-26zy.onrender.com</code> on port 443.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+
+    <!-- Footer -->
+
+    <footer class="border-t border-slate-200 py-12" data-sd-id="87">
+
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6" data-sd-id="88">
+
+        <div class="flex items-center gap-2 grayscale opacity-50" data-sd-id="89">
+
+          <div class="w-6 h-6 accent-gradient rounded flex items-center justify-center" data-sd-id="90">
+
+            <iconify-icon icon="lucide:sparkles" class="text-white text-xs"></iconify-icon>
+
+          </div>
+
+          <span class="font-bold text-slate-900 text-sm tracking-tight" data-sd-id="91">AgenticCleaner</span>
+
+        </div>
+
+        <div class="flex gap-8 text-xs font-semibold text-slate-400 uppercase tracking-widest" data-sd-id="92">
+
+          <a id="footer-privacy" href="https://dc-mcp-26zy.onrender.com/privacy" class="hover:text-slate-600" data-sd-id="93">Privacy</a>
+
+          <a id="footer-terms" href="https://dc-mcp-26zy.onrender.com/terms" class="hover:text-slate-600" data-sd-id="94">Terms</a>
+
+          <a id="footer-api" href="https://dc-mcp-26zy.onrender.com/healthz" class="hover:text-slate-600" data-sd-id="95">API Status</a>
+
+        </div>
+
+        <p class="text-sm text-slate-400" data-sd-id="96">© 2026 Agentic Data Cleaner. All rights reserved.</p>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+
+<script>
+(function(){
+  var tabs=document.querySelectorAll('[data-sd-id="28"] button');
+  tabs.forEach(function(b){b.addEventListener('click',function(){
+    tabs.forEach(function(x){x.classList.remove('tab-active');x.classList.add('text-slate-500');});
+    b.classList.add('tab-active');b.classList.remove('text-slate-500');});});
+  function copyText(t,btn){if(!navigator.clipboard){return;}
+    navigator.clipboard.writeText(t).then(function(){var o=btn.innerHTML;btn.innerHTML='Copied';
+    setTimeout(function(){btn.innerHTML=o;},1200);});}
+  var ep=document.querySelector('[data-sd-id="39"] code');
+  var epBtn=document.querySelector('[data-sd-id="40"]');
+  if(ep&&epBtn){epBtn.addEventListener('click',function(){copyText(ep.textContent.trim(),epBtn);});}
+  var sn=document.querySelector('[data-sd-id="57"]');
+  var snBtn=document.querySelector('[data-sd-id="58"]');
+  if(sn&&snBtn){snBtn.addEventListener('click',function(){copyText(sn.textContent,snBtn);});}
+  ['73','78'].forEach(function(id){
+    var btn=document.querySelector('[data-sd-id="'+id+'"]');
+    if(btn){btn.addEventListener('click',function(){
+      var panel=btn.parentElement.querySelector('div');
+      if(panel){panel.classList.toggle('hidden');}});}});
+})();
+</script>
+</body></html>
+

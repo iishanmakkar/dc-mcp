@@ -36,7 +36,7 @@ PUBLIC_PREFIXES = ("/healthz", "/v1/download/", "/v1/uploads/", "/privacy", "/te
                    "/openapi.json", "/docs", "/.well-known/", "/mcp.json", "/manifest.json")
 # CSP for the designed marketing pages (Tailwind/Iconify CDNs + Google Fonts).
 # Legal pages keep the strict policy below.
-SITE_CSP = ("default-src 'none'; script-src https://cdn.tailwindcss.com https://code.iconify.design; "
+SITE_CSP = ("default-src 'none'; script-src 'unsafe-inline' https://cdn.tailwindcss.com https://code.iconify.design; "
             "style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; "
             "img-src 'self' data:; connect-src 'none'; frame-ancestors 'none'; base-uri 'none'")
 

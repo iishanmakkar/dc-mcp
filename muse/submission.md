@@ -7,15 +7,15 @@ and reviewers will test the connector end to end.
 |---|---|
 | **Connector name** | Agentic Data Cleaner  _(short alternative: Data Cleaner)_ |
 | **Company or developer** | Ishan Makkar |
-| **Product website** | `https://agentic-data-cleaner.onrender.com/` (serves the landing page; `/privacy`, `/terms`, `/support`, `/install`, `/about` are built in) |
+| **Product website** | `https://dc-mcp-26zy.onrender.com/` (serves the landing page; `/privacy`, `/terms`, `/support`, `/install`, `/about` are built in) |
 | **Example prompts** | see below |
 | **Connector icon** | `muse/icon.png` (512x512) or `muse/icon.svg` |
 | **Payments** | **"My connector accepts payments"** once paid features are switched on (`BILLING_ENABLED=true`); otherwise **"does not accept payments"** for launch. See `docs/monetization.md` -- confirm Stripe availability for you first. |
 | **Your name** | Ishan Makkar |
 | **Work email** | ishanmakkar651@gmail.com |
-| **Support email or URL** | ishanmakkar651@gmail.com (`https://agentic-data-cleaner.onrender.com/support`) |
-| **Your privacy policy** | `https://agentic-data-cleaner.onrender.com/privacy` |
-| **Your terms of service** | `https://agentic-data-cleaner.onrender.com/terms` |
+| **Support email or URL** | ishanmakkar651@gmail.com (`https://dc-mcp-26zy.onrender.com/support`) |
+| **Your privacy policy** | `https://dc-mcp-26zy.onrender.com/privacy` |
+| **Your terms of service** | `https://dc-mcp-26zy.onrender.com/terms` |
 | **Anything else?** | see below |
 
 ## Example prompts
@@ -28,7 +28,7 @@ and reviewers will test the connector end to end.
 
 ## Anything else? (optional)
 
-> Agentic Data Cleaner is an MCP server (Streamable HTTP at `https://agentic-data-cleaner.onrender.com/mcp`, bearer-key authentication).
+> Agentic Data Cleaner is an MCP server (Streamable HTTP at `https://dc-mcp-26zy.onrender.com/mcp`, bearer-key authentication).
 > Muse does the reasoning; the connector exposes deterministic tools and never calls a third-party AI model. Safe fixes are
 > applied automatically; anything that deletes rows/columns, fills in missing values or masks personal data requires the user's
 > explicit approval for that specific change. The user's original file is never modified; working copies and download links are
