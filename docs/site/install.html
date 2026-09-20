@@ -162,7 +162,7 @@
 
             <li class="flex items-center gap-2" data-sd-id="21"><iconify-icon icon="lucide:check-circle" class="text-indigo-500"></iconify-icon> The server is hosted at <code class="bg-indigo-100 px-1.5 py-0.5 rounded text-indigo-700 font-mono text-sm">dc-mcp-26zy.onrender.com</code></li>
 
-            <li class="flex items-center gap-2" data-sd-id="22"><iconify-icon icon="lucide:check-circle" class="text-indigo-500"></iconify-icon> No API key needed — point your client at the endpoint below (key holders get the full tier)</li>
+            <li class="flex items-center gap-2" data-sd-id="22"><iconify-icon icon="lucide:check-circle" class="text-indigo-500"></iconify-icon> No API key needed — point your client at the endpoint below and start cleaning</li>
 
           </ul>
 
@@ -362,7 +362,7 @@
 
             <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors group" data-sd-id="73">
 
-              <span class="font-bold text-slate-800" data-sd-id="74">401: Key Mismatch</span>
+              <span class="font-bold text-slate-800" data-sd-id="74">401: Unauthorized</span>
 
               <iconify-icon icon="lucide:chevron-down" class="text-slate-400 group-hover:text-slate-600 transition-transform"></iconify-icon>
 
@@ -370,7 +370,7 @@
 
             <div class="px-6 pb-6 text-sm text-slate-600" data-sd-id="75">
 
-              <p data-sd-id="76">A 401 means the key you sent is wrong. Keyless access needs no <code>Authorization</code> header at all — remove it, or fix the key.</p>
+              <p data-sd-id="76">This server needs no key. If you see a 401, remove any <code>Authorization</code> header from your client config and try again.</p>
 
             </div>
 
