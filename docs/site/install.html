@@ -1,4 +1,8 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
 
   <meta charset="UTF-8">
 
@@ -12,107 +16,126 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
 
+    @view-transition { navigation: auto; }
+
     :root {
 
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --bg-warm: #faf9f6;
 
-      --font-body: 'Inter', sans-serif;
+      --border-soft: #e5e3da;
 
-      --font-mono: 'JetBrains Mono', monospace;
+      --text-dark: #1a1a1a;
+
+      --accent-muted: #6b7280;
 
     }
 
     body {
 
-      font-family: var(--font-body);
+      font-family: 'Outfit', sans-serif;
 
-      background-color: #f8fafc;
+      background-color: var(--bg-warm);
 
-      color: #1e293b;
+      color: var(--text-dark);
 
     }
 
-    h1, h2, h3, h4 {
+    .font-mono {
 
-      font-family: var(--font-sans);
+      font-family: 'Azeret Mono', monospace;
+
+    }
+
+    .terminal-card {
+
+      background: #ffffff;
+
+      border: 1.5px solid var(--border-soft);
+
+      border-radius: 8px;
+
+    }
+
+    .code-dark {
+
+      background-color: #0d0d0d;
+
+      color: #e5e7eb;
+
+    }
+
+    .nav-link {
+
+      font-family: 'Azeret Mono', monospace;
+
+      font-size: 0.75rem;
 
       letter-spacing: -0.02em;
 
-    }
+      color: var(--accent-muted);
 
-    .glass-card {
-
-      background: rgba(255, 255, 255, 0.7);
-
-      backdrop-filter: blur(8px);
-
-      border: 1px solid rgba(226, 232, 240, 0.8);
+      transition: color 0.2s;
 
     }
+
+    .nav-link:hover { color: var(--text-dark); }
 
     .tab-active {
 
-      border-bottom: 2px solid #6366f1;
+      background: var(--text-dark);
 
-      color: #6366f1;
-
-    }
-
-    .code-block {
-
-      font-family: var(--font-mono);
-
-      background-color: #0f172a;
-
-      color: #e2e8f0;
+      color: white;
 
     }
 
-    .accent-gradient {
+    .btn-action {
 
-      background: linear-gradient(135deg, #6366f1 0%, #10b981 100%);
+      background: var(--text-dark);
+
+      color: white;
+
+      border-radius: 6px;
+
+      transition: opacity 0.2s;
 
     }
+
+    .btn-action:hover { opacity: 0.9; }
 
   </style>
 
-  <meta name="description" content="Agentic Data Cleaner: clean messy spreadsheets from inside any AI assistant via MCP. Free, deterministic, audited.">
+  <title>Install Agentic Data Cleaner MCP</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234F46E5'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="Install Agentic Data Cleaner MCP in any AI assistant. Free, keyless, deterministic.">
 </head>
 
 <body>
 
-  <div class="min-h-screen bg-slate-50/50" data-sd-id="1">
+  <div class="min-h-screen">
 
-    <!-- Navigation -->
+    <!-- Header -->
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200" data-sd-id="2">
+    <nav class="sticky top-0 z-50 bg-[#faf9f6] border-b border-[#e5e3da]">
 
-      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between" data-sd-id="3">
+      <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        <a href="/" class="flex items-center gap-2" data-sd-id="4" aria-label="AgenticCleaner home">
+        <div class="flex items-center gap-4">
 
-          <div class="w-8 h-8 accent-gradient rounded-lg flex items-center justify-center" data-sd-id="5">
+          <span class="font-mono text-sm font-bold tracking-tighter">AGENTIC.CLEANER</span>
 
-            <iconify-icon icon="lucide:sparkles" class="text-white text-lg"></iconify-icon>
+        </div>
 
-          </div>
+        <div class="flex items-center gap-6">
 
-          <span class="font-extrabold text-xl text-slate-900 tracking-tight" data-sd-id="6">Agentic<span class="text-indigo-600" data-sd-id="7">Cleaner</span></span>
+          <a id="nav-github" href="https://github.com/iishanmakkar/dc-mcp" target="_blank" class="nav-link">GITHUB</a>
 
-        </a>
+          <a id="nav-status" href="#" class="nav-link">STATUS</a>
 
-        <div class="flex items-center gap-6" data-sd-id="8">
-
-          <a id="nav-docs" href="/about" class="text-sm font-medium text-slate-600 hover:text-slate-900" data-sd-id="9">Documentation</a>
-
-          <a id="nav-support" href="https://dc-mcp-26zy.onrender.com/support" class="text-sm font-medium text-slate-600 hover:text-slate-900" data-sd-id="10">Support</a>
-
-          <a id="nav-dashboard" href="/" class="px-4 py-2 bg-slate-900 text-white text-sm font-semibold rounded-full hover:bg-slate-800 transition-all" data-sd-id="11">Home</a>
+          <a id="nav-docs" href="#" class="nav-link">DOCS</a>
 
         </div>
 
@@ -122,179 +145,135 @@
 
 
 
-    <main class="max-w-5xl mx-auto px-6 py-12" data-sd-id="12">
+    <main class="max-w-4xl mx-auto px-6 py-16">
 
-      <!-- Header Section -->
+      <!-- Title -->
 
-      <header class="mb-12 text-center" data-sd-id="13">
+      <div class="mb-16 text-left">
 
-        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4" data-sd-id="14">
+        <h1 class="text-3xl font-semibold tracking-tight mb-4">Install Data Cleaner MCP</h1>
 
-          Install Agentic Data Cleaner
+        <p class="text-gray-500 font-mono text-sm leading-relaxed max-w-xl">
 
-        </h1>
+          Clean, sanitize, and structure unstructured data using our hosted MCP server. 
 
-        <p class="text-lg text-slate-600 max-w-2xl mx-auto" data-sd-id="15">
-
-          Connect your favorite AI tools to our hosted Model Context Protocol (MCP) server to sanitize and structure your data in seconds.
+          No local setup or keys required for public endpoints.
 
         </p>
-
-      </header>
-
-
-
-      <!-- Requirements Callout -->
-
-      <div class="mb-10 bg-indigo-50 border border-indigo-100 rounded-2xl p-6 flex items-start gap-4" data-sd-id="16">
-
-        <div class="bg-indigo-600/10 p-2 rounded-lg" data-sd-id="17">
-
-          <iconify-icon icon="lucide:alert-circle" class="text-indigo-600 text-xl"></iconify-icon>
-
-        </div>
-
-        <div data-sd-id="18">
-
-          <h3 class="font-bold text-indigo-900 text-lg" data-sd-id="19">Ready for Production</h3>
-
-          <ul class="mt-2 space-y-1 text-indigo-800/80" data-sd-id="20">
-
-            <li class="flex items-center gap-2" data-sd-id="21"><iconify-icon icon="lucide:check-circle" class="text-indigo-500"></iconify-icon> The server is hosted at <code class="bg-indigo-100 px-1.5 py-0.5 rounded text-indigo-700 font-mono text-sm">dc-mcp-26zy.onrender.com</code></li>
-
-            <li class="flex items-center gap-2" data-sd-id="22"><iconify-icon icon="lucide:check-circle" class="text-indigo-500"></iconify-icon> No API key needed — point your client at the endpoint below and start cleaning</li>
-
-          </ul>
-
-        </div>
 
       </div>
 
 
 
-      <!-- Client Setup Tabs -->
+      <!-- AI Auto-Install -->
 
-      <section class="mb-16" data-sd-id="23">
+      <section class="mb-16 terminal-card p-6 border-dashed bg-white/50">
 
-        <div class="flex items-center justify-between mb-6" data-sd-id="24">
+        <div class="flex items-center gap-3 mb-4 text-xs font-mono font-bold uppercase">
 
-          <h2 class="text-2xl font-bold text-slate-900" data-sd-id="25">1. Client Configuration</h2>
+          <iconify-icon icon="lucide:sparkles" class="text-indigo-600"></iconify-icon>
 
-          <span class="text-xs font-semibold px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full uppercase tracking-wider" data-sd-id="26">MCP Streamable HTTP</span>
+          <span>Quick Setup</span>
 
         </div>
 
-        
+        <p class="text-sm text-gray-600 mb-4">Paste this prompt into any AI agent to auto-install:</p>
 
-        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm" data-sd-id="27">
+        <div class="code-dark p-4 rounded-md text-xs font-mono relative group">
 
-          <!-- Tab Navigation -->
+          <code id="auto-install-prompt">Install the Agentic Data Cleaner MCP server using URL: https://dc-mcp-26zy.onrender.com/mcp</code>
 
-          <div class="flex overflow-x-auto border-b border-slate-100 scrollbar-hide" data-sd-id="28">
+          <button class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity bg-white/10 hover:bg-white/20 p-1 rounded">
 
-            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap tab-active" data-sd-id="29">Muse</button>
+            <iconify-icon icon="lucide:copy" class="text-white"></iconify-icon>
 
-            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="30">Claude Desktop</button>
+          </button>
 
-            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="31">ChatGPT</button>
+        </div>
 
-            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="32">Cursor</button>
+      </section>
 
-            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="33">VS Code</button>
 
-            <button class="px-6 py-4 text-sm font-semibold whitespace-nowrap text-slate-500 hover:text-slate-900" data-sd-id="34">Opencode</button>
+
+      <!-- Installation -->
+
+      <section class="mb-16">
+
+        <div class="flex items-center justify-between mb-8">
+
+          <h2 class="text-lg font-semibold font-mono tracking-tighter">01. CLIENT_CONFIG</h2>
+
+          <span class="text-[10px] font-mono text-gray-400 bg-gray-100 px-2 py-0.5 rounded">v2.0.0</span>
+
+        </div>
+
+
+
+        <div class="terminal-card overflow-hidden">
+
+          <div class="flex overflow-x-auto bg-gray-50 border-b border-[#e5e3da]">
+
+            <button class="px-5 py-3 text-[10px] font-mono font-bold tracking-widest tab-active">MUSE</button>
+
+            <button class="px-5 py-3 text-[10px] font-mono font-bold tracking-widest text-gray-400 border-r border-[#e5e3da] hover:text-dark">CLAUDE-DESKTOP</button>
+
+            <button class="px-5 py-3 text-[10px] font-mono font-bold tracking-widest text-gray-400 border-r border-[#e5e3da] hover:text-dark">CHATGPT</button>
+
+            <button class="px-5 py-3 text-[10px] font-mono font-bold tracking-widest text-gray-400 border-r border-[#e5e3da] hover:text-dark">CURSOR</button>
+
+            <button class="px-5 py-3 text-[10px] font-mono font-bold tracking-widest text-gray-400 border-r border-[#e5e3da] hover:text-dark">VS-CODE</button>
+
+            <button class="px-5 py-3 text-[10px] font-mono font-bold tracking-widest text-gray-400 hover:text-dark">OPENCODE</button>
 
           </div>
 
 
 
-          <!-- Tab Content -->
+          <div class="p-8">
 
-          <div class="p-8" data-sd-id="35">
+            <div class="mb-8">
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" data-sd-id="36">
+              <label class="text-[10px] font-mono text-gray-400 uppercase mb-2 block">Endpoint</label>
 
-              <div data-sd-id="37">
+              <div class="flex items-center justify-between py-2 border-b border-gray-100 font-mono text-sm">
 
-                <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2" data-sd-id="38">Endpoint URL</label>
+                <span class="text-gray-700">https://dc-mcp-26zy.onrender.com/mcp</span>
 
-                <div class="flex items-center gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200 mb-6" data-sd-id="39">
-
-                  <code class="flex-1 font-mono text-sm text-slate-700 truncate">https://dc-mcp-26zy.onrender.com/mcp</code>
-
-                  <button class="p-1.5 hover:bg-slate-200 rounded-lg transition-colors" data-sd-id="40">
-
-                    <iconify-icon icon="lucide:copy" class="text-slate-400"></iconify-icon>
-
-                  </button>
-
-                </div>
-
-                
-
-                <h4 class="text-sm font-bold text-slate-900 mb-3" data-sd-id="41">Installation Steps:</h4>
-
-                <ol class="space-y-4 text-sm text-slate-600" data-sd-id="42">
-
-                  <li class="flex gap-3" data-sd-id="43">
-
-                    <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="44">1</span>
-
-                    <span data-sd-id="45">Open your AI client's MCP settings and add a remote server entry.</span>
-
-                  </li>
-
-                  <li class="flex gap-3" data-sd-id="46">
-
-                    <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="47">2</span>
-
-                    <span data-sd-id="48">Name it "DataCleaner" (or anything you like).</span>
-
-                  </li>
-
-                  <li class="flex gap-3" data-sd-id="49">
-
-                    <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="50">3</span>
-
-                    <span data-sd-id="51">Paste the JSON configuration snippet provided on the right — no API key needed.</span>
-
-                  </li>
-
-                </ol>
+                <button class="text-gray-400 hover:text-dark"><iconify-icon icon="lucide:copy"></iconify-icon></button>
 
               </div>
 
+            </div>
 
 
-              <div data-sd-id="52">
 
-                <div class="flex items-center justify-between mb-2" data-sd-id="53">
+            <div>
 
-                  <label class="text-xs font-bold text-slate-400 uppercase tracking-widest" data-sd-id="54">Config Snippet</label>
+              <label class="text-[10px] font-mono text-gray-400 uppercase mb-3 block">Config Snippet</label>
 
-                  <span class="text-[10px] font-mono text-slate-400" data-sd-id="55">JSON</span>
+              <div class="relative group">
 
-                </div>
+                <pre class="code-dark p-6 rounded-lg text-xs leading-relaxed overflow-x-auto">{
 
-                <div class="relative group" data-sd-id="56">
-
-                  <pre class="code-block rounded-2xl p-6 text-sm leading-relaxed overflow-x-auto" data-sd-id="57">{
   "mcpServers": {
+
     "agentic-data-cleaner": {
-      "url": "https://dc-mcp-26zy.onrender.com/mcp"
+
+      "serverUrl": "https://dc-mcp-26zy.onrender.com/mcp"
+
     }
+
   }
+
 }</pre>
 
-                  <button class="absolute top-4 right-4 bg-slate-800 hover:bg-slate-700 text-white p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 text-xs" data-sd-id="58">
+                <button class="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2">
 
-                    <iconify-icon icon="lucide:copy"></iconify-icon>
+                  <iconify-icon icon="lucide:copy"></iconify-icon>
 
-                    Copy Snippet
+                  COPY
 
-                  </button>
-
-                </div>
+                </button>
 
               </div>
 
@@ -308,39 +287,23 @@
 
 
 
-      <!-- Big Files Section -->
+      <!-- Antigravity Block -->
 
-      <section class="mb-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-center" data-sd-id="59">
+      <section class="mb-16">
 
-        <div class="md:col-span-1" data-sd-id="60">
+        <h2 class="text-lg font-semibold font-mono tracking-tighter mb-8">02. ANTIGRAVITY_SETUP</h2>
 
-          <h2 class="text-2xl font-bold text-slate-900 mb-3" data-sd-id="61">2. Large File Processing</h2>
+        <div class="terminal-card p-8 bg-[#0d0d0d] text-[#e5e7eb]">
 
-          <p class="text-slate-600 text-sm leading-relaxed" data-sd-id="62">
+          <p class="text-xs font-mono text-gray-500 mb-6"># Using antigravity to bridge to the cleaner</p>
 
-            Processing CSVs or JSONs over 2 MB? Use our optimized one-time upload pipe to avoid agent context timeouts.
+          <pre class="text-xs font-mono leading-relaxed">{
 
-          </p>
+  "bridge": "antigravity",
 
-        </div>
+  "target": "https://dc-mcp-26zy.onrender.com/mcp"
 
-        <div class="md:col-span-2" data-sd-id="63">
-
-          <div class="bg-white border-2 border-dashed border-emerald-200 rounded-3xl p-10 flex flex-col items-center justify-center text-center hover:bg-emerald-50/50 transition-colors cursor-pointer group" data-sd-id="64">
-
-            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform" data-sd-id="65">
-
-              <iconify-icon icon="lucide:upload-cloud" class="text-3xl"></iconify-icon>
-
-            </div>
-
-            <h3 class="text-lg font-bold text-slate-900" data-sd-id="66">Generate One-Time Upload URL</h3>
-
-            <p class="text-sm text-slate-500 mt-2 mb-6" data-sd-id="67">Files are automatically purged after about an hour.</p>
-
-            <a href="/about" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-emerald-200/50" data-sd-id="68">See How It Works</a>
-
-          </div>
+}</pre>
 
         </div>
 
@@ -348,51 +311,67 @@
 
 
 
-      <!-- Troubleshooting Accordion -->
+      <!-- Large Files -->
 
-      <section class="mb-20" data-sd-id="69">
+      <section class="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
 
-        <h2 class="text-2xl font-bold text-slate-900 mb-8" data-sd-id="70">Troubleshooting</h2>
+        <div>
 
-        <div class="space-y-3" data-sd-id="71">
+          <h2 class="text-lg font-semibold font-mono tracking-tighter mb-4">03. LARGE_FILES</h2>
 
-          <!-- Issue 1 -->
+          <p class="text-sm text-gray-500 font-mono">Handling payloads over 25MB.</p>
 
-          <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm" data-sd-id="72">
+        </div>
 
-            <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors group" data-sd-id="73">
+        <div class="terminal-card p-8 text-center border-dashed">
 
-              <span class="font-bold text-slate-800" data-sd-id="74">401: Unauthorized</span>
+          <iconify-icon icon="lucide:hard-drive" class="text-2xl text-gray-400 mb-4"></iconify-icon>
 
-              <iconify-icon icon="lucide:chevron-down" class="text-slate-400 group-hover:text-slate-600 transition-transform"></iconify-icon>
+          <h3 class="text-sm font-bold mb-2">Open Temporary Pipe</h3>
 
-            </button>
+          <p class="text-[11px] font-mono text-gray-400 mb-6 uppercase tracking-tighter">25MB Cap / 1-Hour Purge Window</p>
 
-            <div class="px-6 pb-6 text-sm text-slate-600" data-sd-id="75">
+          <button class="btn-action w-full py-3 text-[10px] font-mono font-bold tracking-widest">INITIALIZE_UPLOAD</button>
 
-              <p data-sd-id="76">This server needs no key. If you see a 401, remove any <code>Authorization</code> header from your client config and try again.</p>
+        </div>
+
+      </section>
+
+
+
+      <!-- Troubleshooting -->
+
+      <section class="mb-20">
+
+        <h2 class="text-lg font-semibold font-mono tracking-tighter mb-8">DEBUGGING</h2>
+
+        <div class="space-y-4">
+
+          <div class="terminal-card p-6">
+
+            <div class="flex items-center justify-between">
+
+              <h3 class="text-sm font-mono font-bold">401_UNAUTHORIZED</h3>
+
+              <iconify-icon icon="lucide:alert-triangle" class="text-amber-500"></iconify-icon>
 
             </div>
+
+            <p class="text-xs font-mono text-gray-500 mt-2">Verify endpoint URL is exact. Hosted server needs no key. A 401 means you sent a wrong Authorization header — remove it.</p>
 
           </div>
 
-          <!-- Issue 2 -->
+          <div class="terminal-card p-6">
 
-          <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm" data-sd-id="77">
+            <div class="flex items-center justify-between">
 
-            <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors group" data-sd-id="78">
+              <h3 class="text-sm font-mono font-bold">CONNECTION_TIMEOUT</h3>
 
-              <span class="font-bold text-slate-800" data-sd-id="79">Connection Failures</span>
-
-              <iconify-icon icon="lucide:chevron-down" class="text-slate-400 group-hover:text-slate-600 transition-transform"></iconify-icon>
-
-            </button>
-
-            <div class="hidden px-6 pb-6 text-sm text-slate-600" data-sd-id="80">
-
-              <p data-sd-id="81">If you see a network timeout, ensure your firewall allows outbound HTTPS requests to <code>dc-mcp-26zy.onrender.com</code> on port 443.</p>
+              <iconify-icon icon="lucide:wifi-off" class="text-red-400"></iconify-icon>
 
             </div>
+
+            <p class="text-xs font-mono text-gray-500 mt-2">Server might be sleeping. Attempt a manual ping to <code>dc-mcp-26zy.onrender.com</code> to wake.</p>
 
           </div>
 
@@ -400,15 +379,17 @@
 
       </section>
 
-      <!-- AI auto-install prompt -->
-      <section class="mb-20" data-sd-id="97">
-        <h2 class="text-2xl font-bold text-slate-900 mb-3" data-sd-id="98">Let Any AI Install It For You</h2>
-        <p class="text-slate-600 text-sm mb-6 max-w-2xl" data-sd-id="99">
-          Paste the prompt below into Claude, ChatGPT, Cursor or any coding assistant — it clones this repo,
-          installs, configures, verifies and connects a client, all by itself.
-        </p>
-        <div class="relative group" data-sd-id="100">
-          <pre id="ai-prompt-text" class="code-block rounded-2xl p-6 text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap" data-sd-id="101"># Auto-connect prompt — paste this to any AI assistant
+    </main>
+
+
+
+    <!-- Footer -->
+
+    <section class="mb-20">
+<h2 class="text-lg font-semibold font-mono tracking-tighter mb-4">AI_AUTO_INSTALL</h2>
+<p class="text-xs font-mono text-gray-500 mb-6 max-w-2xl">Paste this to any AI assistant — it connects to the hosted server and proves a real clean. No git, no install.</p>
+<div class="relative group">
+<pre id="ai-prompt-text" class="code-dark p-6 rounded-lg text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap"># Auto-connect prompt — paste this to any AI assistant
 
 Copy everything below the line and paste it into Claude, ChatGPT, Cursor,
 VS Code, Opencode, Antigravity or any other AI assistant. No downloads, no
@@ -457,80 +438,30 @@ error and what you tried. Docs: https://dc-mcp-26zy.onrender.com/install
 
 *Agentic Data Cleaner by Ishan Makkar — https://github.com/iishanmakkar/dc-mcp*
 </pre>
-          <button onclick="navigator.clipboard.writeText(document.getElementById('ai-prompt-text').innerText);this.textContent='Copied';setTimeout(()=>this.textContent='Copy Prompt',1200);" class="absolute top-4 right-4 bg-slate-800 hover:bg-slate-700 text-white p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 text-xs" data-sd-id="102">
-            Copy Prompt
-          </button>
-        </div>
-      </section>
-      <!-- Antigravity setup -->
-      <section class="mb-20" data-sd-id="103">
-        <h2 class="text-2xl font-bold text-slate-900 mb-3" data-sd-id="104">Add to Antigravity</h2>
-        <p class="text-slate-600 text-sm mb-6 max-w-2xl" data-sd-id="105">
-          No API key needed. Merge this entry into your <code>mcp_config.json</code> — global file
-          <code>~/.gemini/config/mcp_config.json</code> (all projects) or workspace
-          <code>.agents/mcp_config.json</code> (this project only). Keep your existing servers; just add this one inside <code>"mcpServers"</code>.
-        </p>
-        <div class="relative group mb-6" data-sd-id="106">
-          <pre id="agy-snippet-text" class="code-block rounded-2xl p-6 text-sm leading-relaxed overflow-x-auto" data-sd-id="107">{
-  "mcpServers": {
-    "agentic-data-cleaner": {
-      "serverUrl": "https://dc-mcp-26zy.onrender.com/mcp"
-    }
-  }
-}</pre>
-          <button onclick="navigator.clipboard.writeText(document.getElementById('agy-snippet-text').innerText);this.textContent='Copied';setTimeout(()=>this.textContent='Copy Snippet',1200);" class="absolute top-4 right-4 bg-slate-800 hover:bg-slate-700 text-white p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 text-xs" data-sd-id="108">
-            Copy Snippet
-          </button>
-        </div>
-        <ol class="space-y-4 text-sm text-slate-600" data-sd-id="109">
-          <li class="flex gap-3" data-sd-id="110">
-            <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="111">1</span>
-            <span data-sd-id="112">In Antigravity open the agent side panel → <strong>… → MCP Servers → Manage MCP Servers → View raw config</strong>.</span>
-          </li>
-          <li class="flex gap-3" data-sd-id="113">
-            <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="114">2</span>
-            <span data-sd-id="115">Paste the snippet above inside <code>"mcpServers"</code>, save the file, then hit <strong>Refresh</strong>.</span>
-          </li>
-          <li class="flex gap-3" data-sd-id="116">
-            <span class="flex-none w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold" data-sd-id="117">3</span>
-            <span data-sd-id="118">Ask the agent to <em>“clean this CSV with the data cleaner”</em> — it will call <code>clean_dataset</code> and hand you the download link.</span>
-          </li>
-        </ol>
-      </section>
-    </main>
+<button onclick="navigator.clipboard.writeText(document.getElementById('ai-prompt-text').innerText);this.textContent='COPIED';setTimeout(()=>this.textContent='COPY',1200);" class="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity">COPY</button>
+</div>
+</section>
+<footer class="border-t border-[#e5e3da] py-12">
 
+      <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
 
+        <div class="flex items-center gap-2">
 
-    <!-- Footer -->
-
-    <footer class="border-t border-slate-200 py-12" data-sd-id="87">
-
-      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6" data-sd-id="88">
-
-        <div class="flex items-center gap-2 grayscale opacity-50" data-sd-id="89">
-
-          <div class="w-6 h-6 accent-gradient rounded flex items-center justify-center" data-sd-id="90">
-
-            <iconify-icon icon="lucide:sparkles" class="text-white text-xs"></iconify-icon>
-
-          </div>
-
-          <span class="font-bold text-slate-900 text-sm tracking-tight" data-sd-id="91">AgenticCleaner</span>
+          <span class="font-mono text-[10px] text-gray-400">BY <a id="footer-author" href="https://github.com/iishanmakkar/dc-mcp" target="_blank" class="text-dark hover:underline">ISHAN MAKKAR</a></span>
 
         </div>
 
-        <div class="flex gap-8 text-xs font-semibold text-slate-400 uppercase tracking-widest" data-sd-id="92">
+        <div class="flex gap-8 text-[10px] font-mono text-gray-400">
 
-          <a id="footer-privacy" href="https://dc-mcp-26zy.onrender.com/privacy" class="hover:text-slate-600" data-sd-id="93">Privacy</a>
+          <a id="footer-privacy" href="https://dc-mcp-26zy.onrender.com/privacy" class="hover:text-dark">PRIVACY</a>
 
-          <a id="footer-terms" href="https://dc-mcp-26zy.onrender.com/terms" class="hover:text-slate-600" data-sd-id="94">Terms</a>
+          <a id="footer-terms" href="https://dc-mcp-26zy.onrender.com/terms" class="hover:text-dark">TERMS</a>
 
-          <a id="footer-api" href="https://dc-mcp-26zy.onrender.com/healthz" class="hover:text-slate-600" data-sd-id="95">API Status</a>
-          <a id="footer-github" href="https://github.com/iishanmakkar/dc-mcp" class="hover:text-slate-600" data-sd-id="95">GitHub</a>
+          <a id="footer-git" href="https://github.com/iishanmakkar/dc-mcp" class="hover:text-dark">GITHUB</a>
 
         </div>
 
-        <p class="text-sm text-slate-400" data-sd-id="96">© 2026 Agentic Data Cleaner · Built by Ishan Makkar. All rights reserved.</p>
+        <p class="text-[10px] font-mono text-gray-300 tracking-tighter">┬⌐ 2024 AGENTIC DATA CLEANER</p>
 
       </div>
 
@@ -538,29 +469,33 @@ error and what you tried. Docs: https://dc-mcp-26zy.onrender.com/install
 
   </div>
 
-
-
 <script>
 (function(){
-  var tabs=document.querySelectorAll('[data-sd-id="28"] button');
+  var tabs=document.querySelectorAll('button.px-5');
   tabs.forEach(function(b){b.addEventListener('click',function(){
-    tabs.forEach(function(x){x.classList.remove('tab-active');x.classList.add('text-slate-500');});
-    b.classList.add('tab-active');b.classList.remove('text-slate-500');});});
-  function copyText(t,btn){if(!navigator.clipboard){return;}
-    navigator.clipboard.writeText(t).then(function(){var o=btn.innerHTML;btn.innerHTML='Copied';
+    tabs.forEach(function(x){x.classList.remove('tab-active');});
+    b.classList.add('tab-active');});});
+  function copyText(t,btn){if(!navigator.clipboard||!t){return;}
+    navigator.clipboard.writeText(t).then(function(){var o=btn.innerHTML;btn.innerHTML='COPIED';
     setTimeout(function(){btn.innerHTML=o;},1200);});}
-  var ep=document.querySelector('[data-sd-id="39"] code');
-  var epBtn=document.querySelector('[data-sd-id="40"]');
-  if(ep&&epBtn){epBtn.addEventListener('click',function(){copyText(ep.textContent.trim(),epBtn);});}
-  var sn=document.querySelector('[data-sd-id="57"]');
-  var snBtn=document.querySelector('[data-sd-id="58"]');
-  if(sn&&snBtn){snBtn.addEventListener('click',function(){copyText(sn.textContent,snBtn);});}
-  ['73','78'].forEach(function(id){
-    var btn=document.querySelector('[data-sd-id="'+id+'"]');
-    if(btn){btn.addEventListener('click',function(){
-      var panel=btn.parentElement.querySelector('div');
-      if(panel){panel.classList.toggle('hidden');}});}});
+  document.querySelectorAll('button.absolute').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var box=btn.parentElement, pre=box?box.querySelector('pre'):null;
+      copyText(pre?pre.innerText:'',btn);});});
+  var up=document.querySelector('.btn-action');
+  if(up){up.addEventListener('click',function(){
+    up.textContent='WORKING...';
+    fetch('https://dc-mcp-26zy.onrender.com/mcp',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json, text/event-stream'},
+      body:JSON.stringify({jsonrpc:'2.0',id:1,method:'tools/call',params:{name:'create_upload_url',arguments:{}}})})
+    .then(function(r){return r.json();}).then(function(j){
+      var txt=JSON.parse(j.result.content[0].text);
+      up.textContent='URL READY — CHECK CONSOLE';
+      console.log('Upload URL:',txt.upload_url,'upload_id:',txt.upload_id);
+      alert('One-time upload URL created. Open devtools console for the URL, then PUT your file to it.');})
+    .catch(function(){up.textContent='FAILED — RETRY';});});}
 })();
 </script>
-</body></html>
+</body>
+
+</html>
 

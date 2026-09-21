@@ -4,7 +4,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Agentic Data Cleaner - MCP Server</title>
+    <title>Agentic Data Cleaner | MCP Server</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -12,13 +12,15 @@
 
     <style>
 
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 
         
 
         :root {
 
-            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --font-sans: 'Outfit', sans-serif;
+
+            --font-mono: 'JetBrains Mono', monospace;
 
         }
 
@@ -28,101 +30,149 @@
 
             font-family: var(--font-sans);
 
+            background-color: #fdfcf9;
+
+            color: #1a1a1a;
+
             scroll-behavior: smooth;
 
         }
 
 
 
-        .glass-nav {
+        .font-mono {
 
-            background: rgba(255, 255, 255, 0.8);
-
-            backdrop-filter: blur(12px);
-
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-family: var(--font-mono);
 
         }
 
 
 
-        .hero-gradient {
+        .terminal-block {
 
-            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, rgba(16, 185, 129, 0.02) 100%);
+            background: #121212;
 
-        }
+            border: 1px solid #2a2a2a;
 
-
-
-        .feature-card:hover {
-
-            transform: translateY(-4px);
-
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px -5px rgba(0,0,0,0.1);
 
         }
 
 
 
-        .glow-effect {
+        .nav-link {
 
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+            font-family: var(--font-mono);
+
+            font-size: 0.8rem;
+
+            opacity: 0.7;
+
+            transition: opacity 0.2s;
+
+        }
+
+
+
+        .nav-link:hover {
+
+            opacity: 1;
+
+        }
+
+
+
+        .section-label {
+
+            font-family: var(--font-mono);
+
+            font-size: 0.7rem;
+
+            letter-spacing: 0.05em;
+
+            color: #888;
+
+            text-transform: lowercase;
+
+        }
+
+
+
+        .btn-primary {
+
+            background: #1a1a1a;
+
+            color: #fff;
+
+            transition: all 0.2s;
+
+        }
+
+
+
+        .btn-primary:hover {
+
+            background: #333;
+
+            transform: translateY(-1px);
+
+        }
+
+
+
+        .diff-added {
+
+            color: #4ade80;
+
+            background: rgba(74, 222, 128, 0.1);
+
+        }
+
+
+
+        .diff-removed {
+
+            color: #f87171;
+
+            background: rgba(248, 113, 113, 0.1);
+
+            text-decoration: line-through;
 
         }
 
     </style>
 
-  <meta name="description" content="Agentic Data Cleaner: clean messy spreadsheets from inside any AI assistant via MCP. Free, deterministic, audited.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234F46E5'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="Agentic Data Cleaner: clean messy spreadsheets from inside any AI assistant via MCP. Free, deterministic, audited.">
 </head>
 
 <body>
 
-    <div class="min-h-screen bg-slate-50 text-slate-900" data-sd-id="1">
+    <div class="min-h-screen">
 
-        <!-- Sticky Navigation -->
+        <!-- Minimal Nav -->
 
-        <nav class="fixed top-0 left-0 right-0 z-50 glass-nav" data-sd-id="2">
+        <nav class="fixed top-0 w-full z-50 bg-[#fdfcf9]/80 backdrop-blur-md border-b border-black/5">
 
-            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between" data-sd-id="3">
+            <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
 
-                <div class="flex items-center gap-2" data-sd-id="4">
+                <div class="flex items-center gap-2">
 
-                    <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center" data-sd-id="5">
-
-                        <iconify-icon icon="lucide:wand-2" class="text-white text-xl"></iconify-icon>
-
-                    </div>
-
-                    <span class="font-bold text-xl tracking-tight text-slate-800" data-sd-id="6">AgenticData</span>
+                    <span class="font-mono font-bold text-sm tracking-tighter">agentic_data_cleaner</span>
 
                 </div>
 
                 
 
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600" data-sd-id="7">
+                <div class="flex items-center gap-6">
 
-                    <a href="#features" id="nav-features" class="hover:text-indigo-600 transition-colors" data-sd-id="8">Features</a>
+                    <a href="#features" id="nav-features" class="nav-link">01_features</a>
 
-                    <a href="#how-it-works" id="nav-how" class="hover:text-indigo-600 transition-colors" data-sd-id="9">How it works</a>
+                    <a href="#tools" id="nav-tools" class="nav-link">02_tools</a>
 
-                    <a href="#tools" id="nav-tools" class="hover:text-indigo-600 transition-colors" data-sd-id="10">Tools</a>
+                    <a href="#pricing" id="nav-pricing" class="nav-link">03_pricing</a>
 
-                    <a href="#pricing" id="nav-pricing" class="hover:text-indigo-600 transition-colors" data-sd-id="11">Pricing</a>
-
-                    <a href="/about" id="nav-docs" class="hover:text-indigo-600 transition-colors" data-sd-id="12">Docs</a>
-
-                </div>
-
-
-
-                <div class="flex items-center gap-3" data-sd-id="13">
-
-                    <a href="/install" id="nav-install-btn" class="px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition-all shadow-sm" data-sd-id="14">
-
-                        Install Server
-
-                    </a>
+                    <a href="#install" id="nav-install" class="px-3 py-1 bg-black text-white rounded font-mono text-[0.7rem] hover:bg-slate-800 transition-colors">connect_server</a>
 
                 </div>
 
@@ -132,203 +182,97 @@
 
 
 
-        <!-- Hero Section -->
+        <!-- Hero -->
 
-        <header class="relative pt-32 pb-20 hero-gradient overflow-hidden" data-sd-id="15">
+        <header class="pt-40 pb-20 px-6">
 
-            <div class="max-w-7xl mx-auto px-6" data-sd-id="16">
+            <div class="max-w-6xl mx-auto">
 
-                <div class="text-center max-w-3xl mx-auto" data-sd-id="17">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6" data-sd-id="18">
+                    <div>
 
-                        <span class="relative flex h-2 w-2" data-sd-id="19">
+                        <div class="section-label mb-4">[00] introduction</div>
 
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75" data-sd-id="20"></span>
+                        <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[0.95]">
 
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500" data-sd-id="21"></span>
+                            Clean spreadsheets <br/> 
 
-                        </span>
+                            <span class="text-neutral-400">inside your assistant.</span>
 
-                        v2.0 MCP Server Now Available
+                        </h1>
 
-                    </div>
+                        <p class="text-lg text-neutral-600 mb-10 max-w-lg">
 
-                    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6" data-sd-id="22">
+                            The MCP server that gives LLMs specialized primitives to audit, format, and fix messy data directly in Claude, ChatGPT, and Cursor.
 
-                        Clean spreadsheets from inside your <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-emerald-500" data-sd-id="23">AI assistant.</span>
+                        </p>
 
-                    </h1>
+                        <div class="flex items-center gap-4">
 
-                    <p class="text-lg text-slate-600 mb-10 leading-relaxed" data-sd-id="24">
+                            <a href="#install" id="hero-cta-main" class="px-6 py-3 btn-primary rounded-lg font-mono text-sm">install_guide</a>
 
-                        The first Model Context Protocol (MCP) server that empowers Claude, ChatGPT, and Cursor to scan, fix, and audit messy data directly. No more manual CSV cleanup.
-
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4" data-sd-id="25">
-
-                        <a href="/install" id="cta-install-guide" class="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-all flex items-center justify-center gap-2 shadow-xl shadow-slate-200" data-sd-id="26">
-
-                            <iconify-icon icon="lucide:terminal"></iconify-icon>
-
-                            Install Guide
-
-                        </a>
-
-                        <a href="#tools" id="cta-view-tools" class="w-full sm:w-auto px-8 py-4 bg-white border border-slate-200 text-slate-700 font-bold rounded-xl hover:border-indigo-300 transition-all flex items-center justify-center gap-2 shadow-sm" data-sd-id="27">
-
-                            <iconify-icon icon="lucide:library"></iconify-icon>
-
-                            View Tools
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- Mock Interface -->
-
-                <div class="mt-20 relative max-w-5xl mx-auto" data-sd-id="28">
-
-                    <div class="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden" data-sd-id="29">
-
-                        <div class="bg-slate-50 border-b border-slate-200 px-4 py-3 flex items-center gap-2" data-sd-id="30">
-
-                            <div class="flex gap-1.5" data-sd-id="31">
-
-                                <div class="w-3 h-3 rounded-full bg-slate-300" data-sd-id="32"></div>
-
-                                <div class="w-3 h-3 rounded-full bg-slate-300" data-sd-id="33"></div>
-
-                                <div class="w-3 h-3 rounded-full bg-slate-300" data-sd-id="34"></div>
-
-                            </div>
-
-                            <div class="ml-4 px-3 py-1 bg-white border border-slate-200 rounded-md text-xs text-slate-400 font-mono" data-sd-id="35">
-
-                                mcp server: agentic-data-cleaner
-
-                            </div>
+                            <a href="https://github.com/iishanmakkar/dc-mcp" id="hero-cta-github" class="px-6 py-3 border border-black/10 rounded-lg font-mono text-sm hover:bg-black/5">view_source</a>
 
                         </div>
 
-                        <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-8" data-sd-id="36">
+                    </div>
 
-                            <div class="space-y-4" data-sd-id="37">
 
-                                <div class="flex items-start gap-3" data-sd-id="38">
 
-                                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex-shrink-0 flex items-center justify-center" data-sd-id="39">
+                    <div class="relative">
 
-                                        <iconify-icon icon="lucide:user" class="text-indigo-600"></iconify-icon>
+                        <div class="section-label mb-4">[01] terminal_preview</div>
 
-                                    </div>
+                        <div class="terminal-block rounded-xl overflow-hidden p-6 font-mono text-xs text-neutral-400">
 
-                                    <div class="bg-slate-100 p-4 rounded-2xl rounded-tl-none text-sm text-slate-700" data-sd-id="40">
+                            <div class="flex gap-1.5 mb-6">
 
-                                        Can you scan sales_2024.csv for any data quality issues and propose fixes?
+                                <div class="w-2.5 h-2.5 rounded-full bg-[#333]"></div>
 
-                                    </div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-[#333]"></div>
+
+                                <div class="w-2.5 h-2.5 rounded-full bg-[#333]"></div>
+
+                            </div>
+
+                            <div class="space-y-4">
+
+                                <div class="flex gap-3">
+
+                                    <span class="text-neutral-600">$</span>
+
+                                    <span class="text-neutral-200 underline decoration-indigo-500/50">scan_dataset(file="users.csv")</span>
 
                                 </div>
 
-                                <div class="flex items-start gap-3" data-sd-id="41">
+                                <div class="pl-6 text-neutral-500">
 
-                                    <div class="w-8 h-8 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center" data-sd-id="42">
+                                    [info] found 42 whitespace issues<br/>
 
-                                        <iconify-icon icon="lucide:bot" class="text-white"></iconify-icon>
+                                    [info] found 12 invalid emails<br/>
 
-                                    </div>
+                                    [info] found 3 missing phone formats
 
-                                    <div class="bg-white border border-slate-200 p-4 rounded-2xl rounded-tl-none text-sm text-slate-700 shadow-sm" data-sd-id="43">
+                                </div>
 
-                                        <p class="mb-2 font-semibold text-emerald-600" data-sd-id="44">Analyzing via scan_dataset tool...</p>
+                                <div class="flex gap-3">
 
-                                        <ul class="space-y-1 text-xs" data-sd-id="45">
+                                    <span class="text-neutral-600">$</span>
 
-                                            <li data-sd-id="46">• 12 Mixed date formats found in <code>Order Date</code></li>
+                                    <span class="text-neutral-200 underline decoration-emerald-500/50">apply_cleaning_plan(auto=true)</span>
 
-                                            <li data-sd-id="47">• 4 Missing values in <code>Revenue</code> column</li>
+                                </div>
 
-                                            <li data-sd-id="48">• 2 Inconsistent categorizations in <code>Status</code></li>
+                                <div class="pl-6 text-emerald-500/80">
 
-                                        </ul>
-
-                                        <p class="mt-3" data-sd-id="49">Should I apply the suggested cleaning plan?</p>
-
-                                    </div>
+                                    [success] transformation complete. 248ms.
 
                                 </div>
 
                             </div>
 
-                            <div class="bg-slate-900 rounded-xl p-4 font-mono text-[11px] overflow-x-auto" data-sd-id="50">
-
-                                <table class="w-full text-slate-300 border-collapse" data-sd-id="51">
-
-                                    <thead data-sd-id="52">
-
-                                        <tr class="border-b border-slate-700" data-sd-id="53">
-
-                                            <th class="text-left p-2 text-slate-500 uppercase" data-sd-id="54">ID</th>
-
-                                            <th class="text-left p-2 text-slate-500 uppercase" data-sd-id="55">DATE</th>
-
-                                            <th class="text-left p-2 text-slate-500 uppercase" data-sd-id="56">REV</th>
-
-                                            <th class="text-left p-2 text-slate-500 uppercase" data-sd-id="57">STATUS</th>
-
-                                        </tr>
-
-                                    </thead>
-
-                                    <tbody data-sd-id="58">
-
-                                        <tr data-sd-id="59"><td class="p-2" data-sd-id="60">102</td><td class="p-2 text-emerald-400" data-sd-id="61">2024-01-05</td><td class="p-2" data-sd-id="62">$1,200</td><td class="p-2" data-sd-id="63">PAID</td></tr>
-
-                                        <tr data-sd-id="64"><td class="p-2" data-sd-id="65">103</td><td class="p-2 text-emerald-400" data-sd-id="66">2024-01-05</td><td class="p-2 text-orange-400" data-sd-id="67">NULL</td><td class="p-2" data-sd-id="68">PENDING</td></tr>
-
-                                        <tr data-sd-id="69"><td class="p-2" data-sd-id="70">104</td><td class="p-2 text-emerald-400" data-sd-id="71">2024-01-08</td><td class="p-2" data-sd-id="72">$4,300</td><td class="p-2" data-sd-id="73">SHIPPED</td></tr>
-
-                                        <tr class="bg-indigo-900/30" data-sd-id="74"><td colspan="4" class="p-2 text-indigo-300 text-center italic" data-sd-id="75">Applying row-level transformation...</td></tr>
-
-                                    </tbody>
-
-                                </table>
-
-                            </div>
-
                         </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- Logo Strip -->
-
-                <div class="mt-24 pt-10 border-t border-slate-200" data-sd-id="76">
-
-                    <p class="text-center text-sm font-semibold uppercase tracking-widest text-slate-400 mb-8" data-sd-id="77">Works with your favorite tools</p>
-
-                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 grayscale opacity-60" data-sd-id="78">
-
-                        <span class="font-bold text-xl" data-sd-id="79">Muse</span>
-
-                        <span class="font-bold text-xl" data-sd-id="80">Claude</span>
-
-                        <span class="font-bold text-xl" data-sd-id="81">ChatGPT</span>
-
-                        <span class="font-bold text-xl" data-sd-id="82">Cursor</span>
-
-                        <span class="font-bold text-xl" data-sd-id="83">VS Code</span>
-
-                        <span class="font-bold text-xl" data-sd-id="84">Opencode</span>
 
                     </div>
 
@@ -340,141 +284,41 @@
 
 
 
-        <!-- Features Grid -->
+        <!-- Benchmarks Strip -->
 
-        <section id="features" class="py-24 bg-white" data-sd-id="85">
+        <section class="py-12 border-y border-black/5 bg-white/50">
 
-            <div class="max-w-7xl mx-auto px-6" data-sd-id="86">
+            <div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-between items-center gap-8">
 
-                <div class="text-center mb-16" data-sd-id="87">
+                <div class="flex flex-col">
 
-                    <h2 class="text-3xl font-extrabold text-slate-900 mb-4" data-sd-id="88">Built for Data-Savvy Agents</h2>
+                    <span class="section-label">dataset_titanic</span>
 
-                    <p class="text-slate-600 max-w-2xl mx-auto" data-sd-id="89">Stop fighting with unformatted strings and broken timestamps. Let your AI handle the grunt work with specialized cleaning primitives.</p>
+                    <span class="font-mono text-sm">891 rows / 2s</span>
 
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-sd-id="90">
+                <div class="flex flex-col">
 
-                    <!-- Feature 1 -->
+                    <span class="section-label">dataset_ames</span>
 
-                    <div class="feature-card p-8 rounded-2xl bg-slate-50 border border-slate-100 h-full" data-sd-id="91">
+                    <span class="font-mono text-sm">2,051 rows / 12s</span>
 
-                        <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-6" data-sd-id="92">
+                </div>
 
-                            <iconify-icon icon="lucide:search" class="text-indigo-600 text-2xl"></iconify-icon>
+                <div class="flex flex-col">
 
-                        </div>
+                    <span class="section-label">ci_pipeline</span>
 
-                        <h3 class="text-xl font-bold mb-3" data-sd-id="93">Finds Data Issues</h3>
+                    <span class="font-mono text-sm text-emerald-600">89 tests green</span>
 
-                        <p class="text-slate-600 text-sm leading-relaxed" data-sd-id="94">
+                </div>
 
-                            Automatically identifies duplicates, inconsistent terminology, outliers, and formatting errors using deterministic checks — no AI model in the loop.
+                <div class="flex flex-col">
 
-                        </p>
+                    <span class="section-label">mcp_endpoint</span>
 
-                    </div>
-
-                    <!-- Feature 2 -->
-
-                    <div class="feature-card p-8 rounded-2xl bg-slate-50 border border-slate-100" data-sd-id="95">
-
-                        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6" data-sd-id="96">
-
-                            <iconify-icon icon="lucide:zap" class="text-emerald-600 text-2xl"></iconify-icon>
-
-                        </div>
-
-                        <h3 class="text-xl font-bold mb-3" data-sd-id="97">Safe Auto-Fixes</h3>
-
-                        <p class="text-slate-600 text-sm leading-relaxed" data-sd-id="98">
-
-                            Standard fix templates for dates, phone numbers, and currencies can be run without manual oversight for high-confidence transformations.
-
-                        </p>
-
-                    </div>
-
-                    <!-- Feature 3 -->
-
-                    <div class="feature-card p-8 rounded-2xl bg-slate-50 border border-slate-100" data-sd-id="99">
-
-                        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-6" data-sd-id="100">
-
-                            <iconify-icon icon="lucide:shield-check" class="text-orange-600 text-2xl"></iconify-icon>
-
-                        </div>
-
-                        <h3 class="text-xl font-bold mb-3" data-sd-id="101">Approval Required</h3>
-
-                        <p class="text-slate-600 text-sm leading-relaxed" data-sd-id="102">
-
-                            Risky changes or ambiguous deletions generate a proposal plan that the user must approve before any data is transformed.
-
-                        </p>
-
-                    </div>
-
-                    <!-- Feature 4 -->
-
-                    <div class="feature-card p-8 rounded-2xl bg-slate-50 border border-slate-100" data-sd-id="103">
-
-                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6" data-sd-id="104">
-
-                            <iconify-icon icon="lucide:history" class="text-blue-600 text-2xl"></iconify-icon>
-
-                        </div>
-
-                        <h3 class="text-xl font-bold mb-3" data-sd-id="105">Immutable Source</h3>
-
-                        <p class="text-slate-600 text-sm leading-relaxed" data-sd-id="106">
-
-                            We never modify your original files. All operations create a transformation log and a new exportable version for maximum safety.
-
-                        </p>
-
-                    </div>
-
-                    <!-- Feature 5 -->
-
-                    <div class="feature-card p-8 rounded-2xl bg-slate-50 border border-slate-100" data-sd-id="107">
-
-                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6" data-sd-id="108">
-
-                            <iconify-icon icon="lucide:file-text" class="text-purple-600 text-2xl"></iconify-icon>
-
-                        </div>
-
-                        <h3 class="text-xl font-bold mb-3" data-sd-id="109">Audit Reports</h3>
-
-                        <p class="text-slate-600 text-sm leading-relaxed" data-sd-id="110">
-
-                            Get a comprehensive summary of every change made, why it was made, and a before/after statistical snapshot of your dataset.
-
-                        </p>
-
-                    </div>
-
-                    <!-- Feature 6 -->
-
-                    <div class="feature-card p-8 rounded-2xl bg-slate-50 border border-slate-100" data-sd-id="111">
-
-                        <div class="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center mb-6" data-sd-id="112">
-
-                            <iconify-icon icon="lucide:code-2" class="text-rose-600 text-2xl"></iconify-icon>
-
-                        </div>
-
-                        <h3 class="text-xl font-bold mb-3" data-sd-id="113">Replay Scripts</h3>
-
-                        <p class="text-slate-600 text-sm leading-relaxed" data-sd-id="114">
-
-                            Export cleaning sequences as standalone Python scripts and re-run them on next month's file.
-
-                        </p>
-
-                    </div>
+                    <span class="font-mono text-xs opacity-50 select-all">https://dc-mcp-26zy.onrender.com/mcp</span>
 
                 </div>
 
@@ -484,305 +328,77 @@
 
 
 
-        <!-- How it Works -->
+        <!-- Diff Section -->
 
-        <section id="how-it-works" class="py-24" data-sd-id="115">
+        <section id="features" class="py-24 px-6 bg-[#fdfcf9]">
 
-            <div class="max-w-7xl mx-auto px-6" data-sd-id="116">
+            <div class="max-w-6xl mx-auto">
 
-                <h2 class="text-3xl font-extrabold text-center mb-16" data-sd-id="117">Three Steps to Clean Data</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative" data-sd-id="118">
+                    <div>
 
-                    <div class="hidden md:block absolute top-12 left-1/4 right-1/4 h-0.5 bg-slate-200" data-sd-id="119"></div>
+                        <div class="section-label mb-6">[02] before_after_diff</div>
 
-                    <div class="relative flex flex-col items-center text-center" data-sd-id="120">
+                        <h2 class="text-3xl font-bold mb-6 tracking-tight">Terse transformations. <br/>Clean results.</h2>
 
-                        <div class="w-16 h-16 bg-white border-2 border-indigo-600 text-indigo-600 rounded-full flex items-center justify-center font-bold text-2xl shadow-lg mb-8 z-10" data-sd-id="121">1</div>
+                        <p class="text-neutral-600 mb-8">Agentic Data Cleaner identifies structural anomalies and normalizes them into analysis-ready formats without you writing a single line of Pandas code.</p>
 
-                        <h3 class="text-xl font-bold mb-4" data-sd-id="122">Connect Server</h3>
+                        <div class="space-y-6">
 
-                        <p class="text-slate-600 text-sm" data-sd-id="123">Add our MCP end-point to your Claude-Desktop-Config or Cursor extensions in 30 seconds.</p>
+                            <div class="flex items-start gap-4">
 
-                    </div>
+                                <iconify-icon icon="lucide:zap" class="text-xl mt-1"></iconify-icon>
 
-                    <div class="relative flex flex-col items-center text-center" data-sd-id="124">
+                                <div>
 
-                        <div class="w-16 h-16 bg-white border-2 border-indigo-600 text-indigo-600 rounded-full flex items-center justify-center font-bold text-2xl shadow-lg mb-8 z-10" data-sd-id="125">2</div>
+                                    <h4 class="font-bold text-sm">safe_auto_fixes</h4>
 
-                        <h3 class="text-xl font-bold mb-4" data-sd-id="126">Scan &amp; Clean</h3>
+                                    <p class="text-sm text-neutral-500">Standard normalization for dates, currencies, and emails.</p>
 
-                        <p class="text-slate-600 text-sm" data-sd-id="127">Tell your AI to "clean this dataset". It uses the tools to identify and fix issues with your approval.</p>
+                                </div>
 
-                    </div>
+                            </div>
 
-                    <div class="relative flex flex-col items-center text-center" data-sd-id="128">
+                            <div class="flex items-start gap-4">
 
-                        <div class="w-16 h-16 bg-white border-2 border-indigo-600 text-indigo-600 rounded-full flex items-center justify-center font-bold text-2xl shadow-lg mb-8 z-10" data-sd-id="129">3</div>
+                                <iconify-icon icon="lucide:shield-alert" class="text-xl mt-1"></iconify-icon>
 
-                        <h3 class="text-xl font-bold mb-4" data-sd-id="130">Download Result</h3>
+                                <div>
 
-                        <p class="text-slate-600 text-sm" data-sd-id="131">Once satisfied, tell the AI to export the cleaned table as CSV, Excel, or JSON for your project.</p>
+                                    <h4 class="font-bold text-sm">approval_flow</h4>
 
-                    </div>
+                                    <p class="text-sm text-neutral-500">Risky deletions or fuzzy matching require human sign-off.</p>
 
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- Tools Table -->
-
-        <section id="tools" class="py-24 bg-slate-900 text-white" data-sd-id="132">
-
-            <div class="max-w-5xl mx-auto px-6" data-sd-id="133">
-
-                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4" data-sd-id="134">
-
-                    <div data-sd-id="135">
-
-                        <h2 class="text-3xl font-extrabold mb-4" data-sd-id="136">Included MCP Tools</h2>
-
-                        <p class="text-slate-400" data-sd-id="137">The server exposes 10 modular primitives for your AI to call as needed.</p>
-
-                    </div>
-
-                    <div class="text-xs font-mono bg-slate-800 px-3 py-1.5 rounded border border-slate-700" data-sd-id="138">
-
-                        Endpoint: https://dc-mcp-26zy.onrender.com/mcp
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl" data-sd-id="139">
-
-                    <table class="w-full text-left" data-sd-id="140">
-
-                        <thead class="bg-slate-800/50 border-b border-slate-700" data-sd-id="141">
-
-                            <tr data-sd-id="142">
-
-                                <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-slate-500" data-sd-id="143">Tool Name</th>
-
-                                <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-slate-500" data-sd-id="144">Functionality</th>
-
-                            </tr>
-
-                        </thead>
-
-                        <tbody class="divide-y divide-slate-700" data-sd-id="145">
-
-                            <tr data-sd-id="146"><td class="px-6 py-4 font-mono text-emerald-400" data-sd-id="147">clean_dataset</td><td class="px-6 py-4 text-sm text-slate-300" data-sd-id="148">One-shot cleaning for small, common datasets.</td></tr>
-
-                            <tr data-sd-id="149"><td class="px-6 py-4 font-mono text-emerald-400" data-sd-id="150">scan_dataset</td><td class="px-6 py-4 text-sm text-slate-300" data-sd-id="151">Heuristic investigation for quality issues.</td></tr>
-
-                            <tr data-sd-id="152"><td class="px-6 py-4 font-mono text-emerald-400" data-sd-id="153">get_cleaning_plan</td><td class="px-6 py-4 text-sm text-slate-300" data-sd-id="154">Generate an actionable human-readable plan.</td></tr>
-
-                            <tr data-sd-id="155"><td class="px-6 py-4 font-mono text-emerald-400" data-sd-id="156">apply_cleaning_plan</td><td class="px-6 py-4 text-sm text-slate-300" data-sd-id="157">Execute all items in a previously validated plan.</td></tr>
-
-                            <tr data-sd-id="158"><td class="px-6 py-4 font-mono text-emerald-400" data-sd-id="159">apply_cleaning_action</td><td class="px-6 py-4 text-sm text-slate-300" data-sd-id="160">Execute a specific single atomic transformation.</td></tr>
-
-                            <tr data-sd-id="161"><td class="px-6 py-4 font-mono text-emerald-400" data-sd-id="162">preview_dataset</td><td class="px-6 py-4 text-sm text-slate-300" data-sd-id="163">Fetch sample rows to inspect current state.</td></tr>
-
-                            <tr data-sd-id="164"><td class="px-6 py-4 font-mono text-emerald-400" data-sd-id="165">export_dataset</td><td class="px-6 py-4 text-sm text-slate-300" data-sd-id="166">Serialize current working state to file storage.</td></tr>
-
-                            <tr data-sd-id="167"><td class="px-6 py-4 font-mono text-emerald-400" data-sd-id="168">create_upload_url</td><td class="px-6 py-4 text-sm text-slate-300" data-sd-id="169">Secure temporary endpoint for local file ingestion.</td></tr>
-
-                            <tr data-sd-id="170"><td class="px-6 py-4 font-mono text-emerald-400" data-sd-id="171">delete_dataset</td><td class="px-6 py-4 text-sm text-slate-300" data-sd-id="172">Memory management for server-side environments.</td></tr>
-
-                            <tr data-sd-id="173"><td class="px-6 py-4 font-mono text-emerald-400" data-sd-id="174">list_cleaning_actions</td><td class="px-6 py-4 text-sm text-slate-300" data-sd-id="175">Query the library of available fix patterns.</td></tr>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- Support Formats Row -->
-
-        <section class="py-12 bg-white border-y border-slate-100" data-sd-id="176">
-
-            <div class="max-w-7xl mx-auto px-6 overflow-hidden" data-sd-id="177">
-
-                <div class="flex items-center justify-center gap-12 font-bold text-slate-300 whitespace-nowrap animate-pulse" data-sd-id="178">
-
-                    <span data-sd-id="179">CSV</span>
-
-                    <iconify-icon icon="lucide:arrow-right"></iconify-icon>
-
-                    <span data-sd-id="180">TSV</span>
-
-                    <iconify-icon icon="lucide:arrow-right"></iconify-icon>
-
-                    <span data-sd-id="181">XLSX</span>
-
-                    <iconify-icon icon="lucide:arrow-right"></iconify-icon>
-
-                    <span data-sd-id="182">JSON</span>
-
-                    <iconify-icon icon="lucide:arrow-right"></iconify-icon>
-
-                    <span data-sd-id="183">JSONL</span>
-
-                    <iconify-icon icon="lucide:arrow-right"></iconify-icon>
-
-                    <span data-sd-id="184">PARQUET</span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- Pricing Section -->
-
-        <section id="pricing" class="py-24 bg-slate-50" data-sd-id="185">
-
-            <div class="max-w-7xl mx-auto px-6" data-sd-id="186">
-
-                <div class="text-center mb-16" data-sd-id="187">
-
-                    <h2 class="text-3xl font-extrabold mb-4" data-sd-id="188">Honest Pricing</h2>
-
-                    <p class="text-slate-600" data-sd-id="189">Self-host for free or use our managed infrastructure.</p>
-
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto" data-sd-id="190">
-
-                    <!-- Free Card -->
-
-                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col" data-sd-id="191">
-
-                        <div class="mb-8" data-sd-id="192">
-
-                            <h3 class="text-xl font-bold mb-2" data-sd-id="193">Self-Hosted</h3>
-
-                            <p class="text-slate-500 text-sm" data-sd-id="194">Open-source core for local use.</p>
-
-                            <div class="mt-6 flex items-baseline gap-1" data-sd-id="195">
-
-                                <span class="text-4xl font-extrabold text-slate-900" data-sd-id="196">$0</span>
-
-                                <span class="text-slate-500" data-sd-id="197">/forever</span>
+                                </div>
 
                             </div>
 
                         </div>
 
-                        <ul class="space-y-4 mb-10 flex-grow" data-sd-id="198">
-
-                            <li class="flex items-center gap-2 text-sm text-slate-600" data-sd-id="199">
-
-                                <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
-
-                                5 files per day · 2 MB · CSV export
-
-                            </li>
-
-                            <li class="flex items-center gap-2 text-sm text-slate-600" data-sd-id="200">
-
-                                <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
-
-                                Complete tool library (10 tools)
-
-                            </li>
-
-                            <li class="flex items-center gap-2 text-sm text-slate-600 text-slate-400 line-through" data-sd-id="201">
-
-                                <iconify-icon icon="lucide:x" class="text-slate-300"></iconify-icon>
-
-                                Audit report of every change
-
-                            </li>
-
-                            <li class="flex items-center gap-2 text-sm text-slate-600 text-slate-400 line-through" data-sd-id="202">
-
-                                <iconify-icon icon="lucide:x" class="text-slate-300"></iconify-icon>
-
-                                Large files + all formats
-
-                            </li>
-
-                        </ul>
-
-                        <a href="https://github.com/iishanmakkar/dc-mcp" id="price-free-link" class="w-full py-3 text-center border border-slate-200 font-bold rounded-xl hover:bg-slate-50 transition-colors" data-sd-id="203">View Repo</a>
-
                     </div>
 
-                    <!-- Paid Card -->
+                    <div class="terminal-block rounded-xl overflow-hidden font-mono text-[11px]">
 
-                    <div class="bg-white p-8 rounded-3xl border-2 border-indigo-600 shadow-xl relative flex flex-col" data-sd-id="204">
+                        <div class="bg-neutral-900 px-4 py-2 text-neutral-500 border-b border-white/5">diff --git users.csv</div>
 
-                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full" data-sd-id="205">Recommended</div>
+                        <div class="p-4 leading-relaxed">
 
-                        <div class="mb-8" data-sd-id="206">
+                            <div class="text-neutral-500">@@ -10,3 +10,3 @@</div>
 
-                            <h3 class="text-xl font-bold mb-2" data-sd-id="207">Standard Managed</h3>
+                            <div>&nbsp;&nbsp;id,name,email,spent</div>
 
-                            <p class="text-slate-500 text-sm" data-sd-id="208">Full power for real files.</p>
+                            <div class="diff-removed">- 104, " John Doe  ", john.d@gmial.com, NULL</div>
 
-                            <div class="mt-6 flex items-baseline gap-1" data-sd-id="209">
+                            <div class="diff-added">+ 104, "John Doe", john.d@gmail.com, N/A</div>
 
-                                <span class="text-4xl font-extrabold text-slate-900" data-sd-id="210">Free</span>
+                            <div>&nbsp;&nbsp;105, "Sarah P.", sarah@corp.com, 1200.00</div>
 
-                                <span class="text-slate-500" data-sd-id="211">during launch</span>
+                            <div class="diff-removed">- 106, "mike ", , $45.0</div>
 
-                            </div>
+                            <div class="diff-added">+ 106, "Mike", N/A, 45.00</div>
 
                         </div>
-
-                        <ul class="space-y-4 mb-10 flex-grow" data-sd-id="212">
-
-                            <li class="flex items-center gap-2 text-sm text-slate-600 font-medium" data-sd-id="213">
-
-                                <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
-
-                                All Free features
-
-                            </li>
-
-                            <li class="flex items-center gap-2 text-sm text-slate-600" data-sd-id="214">
-
-                                <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
-
-                                Larger files · 25 MB / 200k rows
-
-                            </li>
-
-                            <li class="flex items-center gap-2 text-sm text-slate-600" data-sd-id="215">
-
-                                <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
-
-                                Audit report + replay script
-
-                            </li>
-
-                            <li class="flex items-center gap-2 text-sm text-slate-600" data-sd-id="216">
-
-                                <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
-
-                                All 6 export formats
-
-                            </li>
-
-                        </ul>
-
-                        <a href="/install" id="price-pro-link" class="w-full py-3 text-center bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all" data-sd-id="217">Install Now</a>
 
                     </div>
 
@@ -794,69 +410,95 @@
 
 
 
-        <!-- FAQ Accordion -->
+        <!-- Tools List -->
 
-        <section id="faq" class="py-24 bg-white" data-sd-id="218">
+        <section id="tools" class="py-24 px-6 bg-white border-y border-black/5">
 
-            <div class="max-w-3xl mx-auto px-6" data-sd-id="219">
+            <div class="max-w-6xl mx-auto">
 
-                <h2 class="text-3xl font-extrabold text-center mb-12" data-sd-id="220">Frequently Asked</h2>
+                <div class="section-label mb-12">[03] toolset_specification</div>
 
-                <div class="space-y-4" data-sd-id="221">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-16">
 
-                    <details class="group bg-slate-50 rounded-2xl border border-slate-100 open:border-indigo-100 transition-all" data-sd-id="222">
+                    <div>
 
-                        <summary class="list-none p-6 cursor-pointer flex items-center justify-between font-bold text-slate-800" data-sd-id="223">
+                        <div class="font-mono text-xs font-bold mb-2">clean_dataset</div>
 
-                            Is my file modified directly?
+                        <div class="text-xs text-neutral-500 leading-relaxed">One-shot cleaning for small, common datasets.</div>
 
-                            <iconify-icon icon="lucide:plus" class="group-open:rotate-45 transition-transform"></iconify-icon>
+                    </div>
 
-                        </summary>
+                    <div>
 
-                        <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" data-sd-id="224">
+                        <div class="font-mono text-xs font-bold mb-2">scan_dataset</div>
 
-                            Never. The server operates on an in-memory copy of your data (the "working state"). No physical bytes are changed on your hard drive until you explicitly call the <code>export_dataset</code> tool to save a new version.
+                        <div class="text-xs text-neutral-500 leading-relaxed">Heuristic investigation for quality issues.</div>
 
-                        </div>
+                    </div>
 
-                    </details>
+                    <div>
 
-                    <details class="group bg-slate-50 rounded-2xl border border-slate-100 open:border-indigo-100 transition-all" data-sd-id="225">
+                        <div class="font-mono text-xs font-bold mb-2">get_cleaning_plan</div>
 
-                        <summary class="list-none p-6 cursor-pointer flex items-center justify-between font-bold text-slate-800" data-sd-id="226">
+                        <div class="text-xs text-neutral-500 leading-relaxed">Generate actionable human-readable plan.</div>
 
-                            What types of changes need approval?
+                    </div>
 
-                            <iconify-icon icon="lucide:plus" class="group-open:rotate-45 transition-transform"></iconify-icon>
+                    <div>
 
-                        </summary>
+                        <div class="font-mono text-xs font-bold mb-2">apply_cleaning_plan</div>
 
-                        <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" data-sd-id="227">
+                        <div class="text-xs text-neutral-500 leading-relaxed">Execute all items in a validated plan.</div>
 
-                            By default, the server flags any "non-deterministic" changes—such as inferring missing categories or deleting outliers—as requiring approval. Simple formatting (uppercase to lowercase, ISO dates) can be automated in settings.
+                    </div>
 
-                        </div>
+                    <div>
 
-                    </details>
+                        <div class="font-mono text-xs font-bold mb-2">apply_cleaning_action</div>
 
-                    <details class="group bg-slate-50 rounded-2xl border border-slate-100 open:border-indigo-100 transition-all" data-sd-id="228">
+                        <div class="text-xs text-neutral-500 leading-relaxed">Execute a single atomic transformation.</div>
 
-                        <summary class="list-none p-6 cursor-pointer flex items-center justify-between font-bold text-slate-800" data-sd-id="229">
+                    </div>
 
-                            How big can my datasets be?
+                    <div>
 
-                            <iconify-icon icon="lucide:plus" class="group-open:rotate-45 transition-transform"></iconify-icon>
+                        <div class="font-mono text-xs font-bold mb-2">preview_dataset</div>
 
-                        </summary>
+                        <div class="text-xs text-neutral-500 leading-relaxed">Fetch sample rows to inspect current state.</div>
 
-                        <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" data-sd-id="230">
+                    </div>
 
-                            The self-hosted version is limited only by your local RAM. For the managed version, the paid plan handles files up to 25 MB / 200,000 rows (2 MB on the free plan).
+                    <div>
 
-                        </div>
+                        <div class="font-mono text-xs font-bold mb-2">export_dataset</div>
 
-                    </details>
+                        <div class="text-xs text-neutral-500 leading-relaxed">Serialize working state to file storage.</div>
+
+                    </div>
+
+                    <div>
+
+                        <div class="font-mono text-xs font-bold mb-2">create_upload_url</div>
+
+                        <div class="text-xs text-neutral-500 leading-relaxed">Secure temp endpoint for local ingestion.</div>
+
+                    </div>
+
+                    <div>
+
+                        <div class="font-mono text-xs font-bold mb-2">delete_dataset</div>
+
+                        <div class="text-xs text-neutral-500 leading-relaxed">Memory management for server-side environments.</div>
+
+                    </div>
+
+                    <div>
+
+                        <div class="font-mono text-xs font-bold mb-2">list_cleaning_actions</div>
+
+                        <div class="text-xs text-neutral-500 leading-relaxed">Query library of available fix patterns.</div>
+
+                    </div>
 
                 </div>
 
@@ -866,43 +508,101 @@
 
 
 
-        <!-- Final CTA -->
+        <!-- Pricing -->
 
-        <section id="install" class="py-24" data-sd-id="231">
+        <section id="pricing" class="py-24 px-6">
 
-            <div class="max-w-7xl mx-auto px-6" data-sd-id="232">
+            <div class="max-w-4xl mx-auto">
 
-                <div class="bg-indigo-600 rounded-[2rem] p-12 text-center text-white relative overflow-hidden" data-sd-id="233">
+                <div class="section-label mb-12 text-center">[04] access_tiers</div>
 
-                    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl" data-sd-id="234"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-black/5 rounded-2xl overflow-hidden border border-black/5">
 
-                    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-emerald-400/10 rounded-full blur-3xl" data-sd-id="235"></div>
+                    <div class="bg-white p-12">
 
-                    
+                        <div class="font-mono text-[0.7rem] uppercase tracking-widest text-neutral-400 mb-2">tier_free</div>
 
-                    <h2 class="text-4xl font-extrabold mb-6" data-sd-id="236">Ready to upgrade your agent's skills?</h2>
+                        <div class="text-3xl font-bold mb-6">$0</div>
 
-                    <p class="text-indigo-100 text-lg mb-10 max-w-xl mx-auto" data-sd-id="237">Install the Agentic Data Cleaner server and start cleaning data in Claude Desktop or Cursor today.</p>
+                        <ul class="space-y-3 mb-8 text-sm text-neutral-500 font-mono">
 
-                    
+                            <li>+ 5 files / day</li>
 
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-6" data-sd-id="238">
+                            <li>+ 2MB CSV limit</li>
 
-                        <div class="bg-slate-900 rounded-xl px-6 py-3 font-mono text-sm flex items-center gap-4" data-sd-id="239">
+                            <li>+ full tool access</li>
 
-                            <span class="text-slate-500" data-sd-id="240">$</span>
+                        </ul>
 
-                            <span data-sd-id="241">https://dc-mcp-26zy.onrender.com/mcp</span>
+                        <a href="https://github.com/iishanmakkar/dc-mcp" id="price-free-btn" class="inline-block px-6 py-2 border border-black text-xs font-mono rounded hover:bg-black hover:text-white transition-all">self_host</a>
 
-                            <iconify-icon icon="lucide:copy" class="text-slate-400 hover:text-white cursor-pointer"></iconify-icon>
+                    </div>
 
-                        </div>
+                    <div class="bg-white p-12 relative">
 
-                        <a href="/install" id="final-docs-btn" class="px-8 py-3 bg-white text-indigo-600 font-bold rounded-xl hover:bg-indigo-50 transition-all" data-sd-id="242">Read Installation Docs</a>
+                        <div class="absolute top-6 right-6 font-mono text-[0.6rem] bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded">managed</div>
+
+                        <div class="font-mono text-[0.7rem] uppercase tracking-widest text-neutral-400 mb-2">tier_pro</div>
+
+                        <div class="text-3xl font-bold mb-6">Free<span class="text-sm font-normal text-neutral-400 italic">/mo</span></div>
+
+                        <ul class="space-y-3 mb-8 text-sm text-neutral-500 font-mono">
+
+                            <li>+ 25MB file limit</li>
+
+                            <li>+ all formats (xlsx/parquet)</li>
+
+                            <li>+ audit reports</li>
+
+                            <li>+ replay scripts</li>
+
+                        </ul>
+
+                        <a href="/install" id="price-pro-btn" class="inline-block px-6 py-2 bg-black text-white text-xs font-mono rounded hover:bg-neutral-800 transition-all">start_managed</a>
 
                     </div>
 
                 </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Install -->
+
+        <section id="install" class="py-24 px-6 border-t border-black/5">
+
+            <div class="max-w-6xl mx-auto text-center">
+
+                <div class="section-label mb-6">[05] deployment</div>
+
+                <h2 class="text-4xl font-bold mb-10 tracking-tight">Ready to connect.</h2>
+
+                
+
+                <div class="max-w-2xl mx-auto terminal-block rounded-xl overflow-hidden flex items-center justify-between px-6 py-4">
+
+                    <div class="flex items-center gap-4 font-mono text-sm">
+
+                        <span class="text-neutral-600">$</span>
+
+                        <span class="text-neutral-200">docker pull iishanmakkar/dc-mcp:latest</span>
+
+                    </div>
+
+                    <button class="text-neutral-500 hover:text-white transition-colors">
+
+                        <iconify-icon icon="lucide:copy"></iconify-icon>
+
+                    </button>
+
+                </div>
+
+                
+
+                <p class="mt-8 text-neutral-400 text-sm font-mono">or connect to managed endpoint: <span class="text-neutral-200">https://dc-mcp-26zy.onrender.com/mcp</span></p>
 
             </div>
 
@@ -912,81 +612,33 @@
 
         <!-- Footer -->
 
-        <footer class="bg-slate-50 py-20 border-t border-slate-200" data-sd-id="243">
+        <footer class="py-20 px-6 bg-white border-t border-black/5">
 
-            <div class="max-w-7xl mx-auto px-6" data-sd-id="244">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-12" data-sd-id="245">
+                <div class="flex items-center gap-2">
 
-                    <div class="col-span-1 md:col-span-2" data-sd-id="246">
-
-                        <div class="flex items-center gap-2 mb-6" data-sd-id="247">
-
-                            <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center" data-sd-id="248">
-
-                                <iconify-icon icon="lucide:wand-2" class="text-white text-xl"></iconify-icon>
-
-                            </div>
-
-                            <span class="font-bold text-xl tracking-tight text-slate-800" data-sd-id="249">AgenticData</span>
-
-                        </div>
-
-                        <p class="text-slate-500 max-w-xs leading-relaxed mb-6" data-sd-id="250">
-
-                            Building the foundation for autonomous data engineering. An open MCP implementation for messy spreadsheets.
-
-                        </p>
-
-                        <div class="flex gap-4" data-sd-id="251">
-
-                            
-
-                            <a href="https://github.com/iishanmakkar/dc-mcp" id="social-github" class="text-slate-400 hover:text-indigo-600 transition-colors" data-sd-id="253"><iconify-icon icon="mdi:github" class="text-2xl"></iconify-icon></a>
-
-                        </div>
-
-                    </div>
-
-                    <div data-sd-id="254">
-
-                        <h4 class="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest" data-sd-id="255">Resources</h4>
-
-                        <ul class="space-y-4 text-sm text-slate-500" data-sd-id="256">
-
-                            <li data-sd-id="257"><a href="/about" id="footer-docs" class="hover:text-indigo-600 transition-colors" data-sd-id="258">Documentation</a></li>
-
-                            <li data-sd-id="259"><a href="https://modelcontextprotocol.io/" id="footer-mcp" class="hover:text-indigo-600 transition-colors" data-sd-id="260">MCP Specification</a></li>
-
-                            <li data-sd-id="261"><a href="https://github.com/iishanmakkar/dc-mcp" id="footer-github" class="hover:text-indigo-600 transition-colors" data-sd-id="262">Open Source</a></li>
-
-                            <li data-sd-id="263"><a href="https://dc-mcp-26zy.onrender.com/support" id="footer-support" class="hover:text-indigo-600 transition-colors" data-sd-id="264">Support</a></li>
-
-                        </ul>
-
-                    </div>
-
-                    <div data-sd-id="265">
-
-                        <h4 class="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest" data-sd-id="266">Legal</h4>
-
-                        <ul class="space-y-4 text-sm text-slate-500" data-sd-id="267">
-
-                            <li data-sd-id="268"><a href="https://dc-mcp-26zy.onrender.com/privacy" id="footer-privacy" class="hover:text-indigo-600 transition-colors" data-sd-id="269">Privacy Policy</a></li>
-
-                            <li data-sd-id="270"><a href="https://dc-mcp-26zy.onrender.com/terms" id="footer-terms" class="hover:text-indigo-600 transition-colors" data-sd-id="271">Terms of Service</a></li>
-
-                            <li data-sd-id="272"><a href="https://dc-mcp-26zy.onrender.com/privacy" id="footer-cookies" class="hover:text-indigo-600 transition-colors" data-sd-id="273">Cookie Policy</a></li>
-
-                        </ul>
-
-                    </div>
+                    <span class="font-mono font-bold text-sm tracking-tighter">agentic_data_cleaner</span>
 
                 </div>
 
-                <div class="mt-20 pt-8 border-t border-slate-200 text-center text-xs text-slate-400" data-sd-id="274">
+                
 
-                    © 2026 Agentic Data Cleaner. All rights reserved. Built by <a class="hover:text-indigo-600" href="https://github.com/iishanmakkar/dc-mcp">Ishan Makkar</a> for the Model Context Protocol ecosystem.
+                <div class="text-xs text-neutral-400 font-mono">
+
+                    built_by <a href="https://github.com/iishanmakkar" id="footer-author-link" class="text-black hover:underline">Ishan Makkar</a>
+
+                </div>
+
+                
+
+                <div class="flex gap-6">
+
+                    <a href="/about" id="footer-docs" class="nav-link">docs</a>
+
+                    <a href="https://github.com/iishanmakkar/dc-mcp" id="footer-github" class="nav-link">github</a>
+
+                    <a href="https://dc-mcp-26zy.onrender.com/terms" id="footer-legal" class="nav-link">legal</a>
 
                 </div>
 
@@ -996,7 +648,7 @@
 
     </div>
 
+</body>
 
-
-</body></html>
+</html>
 

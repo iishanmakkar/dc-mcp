@@ -1,4 +1,8 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
 
   <meta charset="UTF-8">
 
@@ -12,15 +16,17 @@
 
   <style>
 
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
 
     
 
     :root {
 
-      --indigo-accent: #4f46e5;
+      --bg-warm: #fdfcf9;
 
-      --emerald-accent: #10b981;
+      --border-soft: #e5e2db;
+
+      --terminal-black: #1a1a1a;
 
     }
 
@@ -28,11 +34,13 @@
 
     body {
 
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
 
-      background-color: #fafafa;
+      background-color: var(--bg-warm);
 
-      color: #1a1a1a;
+      color: var(--terminal-black);
+
+      -webkit-font-smoothing: antialiased;
 
     }
 
@@ -46,73 +54,87 @@
 
 
 
-    .glass-card {
+    .code-block {
 
-      background: rgba(255, 255, 255, 0.7);
+      background: var(--terminal-black);
 
-      backdrop-filter: blur(12px);
+      color: #e5e7eb;
 
-      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
 
-    }
+      padding: 1.5rem;
 
+      font-size: 0.875rem;
 
-
-    .gradient-text {
-
-      background: linear-gradient(135deg, var(--indigo-accent), var(--emerald-accent));
-
-      -webkit-background-clip: text;
-
-      -webkit-text-fill-color: transparent;
+      line-height: 1.6;
 
     }
 
 
 
-    .arch-line {
+    .risk-badge {
 
-      background: repeating-linear-gradient(90deg, #e5e7eb, #e5e7eb 10px, transparent 10px, transparent 20px);
+      font-family: 'JetBrains Mono', monospace;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.05em;
+
+      font-size: 10px;
+
+      padding: 2px 6px;
+
+      border-radius: 4px;
+
+    }
+
+
+
+    @view-transition {
+
+      navigation: auto;
 
     }
 
   </style>
 
-  <meta name="description" content="Agentic Data Cleaner: clean messy spreadsheets from inside any AI assistant via MCP. Free, deterministic, audited.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234F46E5'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="What Agentic Data Cleaner MCP is: deterministic data-cleaning tools for any AI assistant. Free, audited, open.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234F46E5'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="What Agentic Data Cleaner MCP is: deterministic data-cleaning tools for any AI assistant. Free, audited, open.">
 </head>
 
 <body>
 
-  <div class="min-h-screen" data-sd-id="1">
+  <div class="min-h-screen flex flex-col">
 
     <!-- Navigation -->
 
-    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100" data-sd-id="2">
+    <nav class="fixed top-0 w-full z-50 bg-[#fdfcf9] border-b border-[#e5e2db]">
 
-      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between" data-sd-id="3">
+      <div class="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between">
 
-        <a href="/" class="flex items-center gap-2" data-sd-id="4" aria-label="AgenticData home">
+        <div class="flex items-center gap-3">
 
-          <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center" data-sd-id="5">
+          <div class="w-6 h-6 bg-black rounded flex items-center justify-center">
 
-            <iconify-icon icon="lucide:sparkles" class="text-white text-xl"></iconify-icon>
+            <iconify-icon icon="lucide:terminal" class="text-white text-sm"></iconify-icon>
 
           </div>
 
-          <span class="font-bold text-xl tracking-tight" data-sd-id="6">Agentic<span class="text-indigo-600" data-sd-id="7">Data</span></span>
+          <span class="mono font-bold tracking-tighter">ADC/MCP</span>
 
-        </a>
+        </div>
 
-        <div class="flex items-center gap-8" data-sd-id="8">
+        <div class="flex items-center gap-6">
 
-          <a href="/#features" id="nav-features" class="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors" data-sd-id="9">Features</a>
+          <a href="#protocol" id="nav-protocol" class="text-xs mono text-gray-500 hover:text-black transition-colors">PROTOCOL</a>
 
-          <a href="/#pricing" id="nav-pricing" class="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors" data-sd-id="10">Pricing</a>
+          <a href="#tools" id="nav-tools" class="text-xs mono text-gray-500 hover:text-black transition-colors">TOOLS</a>
 
-          <a href="/install" id="nav-docs" class="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors" data-sd-id="11">Documentation</a>
+          <a href="https://github.com/iishanmakkar/dc-mcp" id="nav-github" class="text-xs mono text-gray-500 hover:text-black transition-colors">GITHUB</a>
 
-          <a href="/install" id="nav-login" class="px-5 py-2.5 bg-indigo-600 text-white rounded-full text-sm font-semibold hover:bg-indigo-700 transition-all shadow-sm" data-sd-id="12">Get Started</a>
+          <a href="/install" id="nav-start" class="text-xs mono border border-black px-3 py-1.5 hover:bg-black hover:text-white transition-all">INITIALIZE_SESSION</a>
 
         </div>
 
@@ -122,63 +144,91 @@
 
 
 
-    <main class="pt-32 pb-20" data-sd-id="13">
+    <main class="pt-32 pb-24 flex-1">
 
-      <!-- Hero Section / Explainer -->
+      <!-- Hero -->
 
-      <section class="max-w-7xl mx-auto px-6 mb-24 text-center" data-sd-id="14">
+      <section class="max-w-6xl mx-auto px-8 mb-24">
 
-        <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6 max-w-4xl mx-auto leading-[1.1]" data-sd-id="15">
+        <div class="max-w-3xl">
 
-          One protocol to rule your <span class="gradient-text" data-sd-id="16">Messy Data</span>.
+          <span class="mono text-[10px] text-gray-400 mb-4 block">// PROJECT_AGENTIC_DATA_CLEANER</span>
 
-        </h1>
+          <h1 class="text-4xl font-bold tracking-tight mb-6 leading-tight">
 
-        <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed" data-sd-id="17">
+            Deterministic data sanitization for AI agents via Model Context Protocol.
 
-          Agentic Data Cleaner is a dedicated MCP server that empowers AI models to sanitize, normalize, and validate datasets with deterministic precision.
+          </h1>
 
-        </p>
+          <p class="text-lg text-gray-600 mb-10 leading-relaxed font-medium">
 
-        
+            Bridging the gap between LLM intent and dataset integrity through a standardized terminal interface.
 
-        <div class="grid md:grid-cols-2 gap-8 text-left max-w-5xl mx-auto" data-sd-id="18">
+          </p>
 
-          <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm" data-sd-id="19">
+          
 
-            <h3 class="text-lg font-bold mb-3 flex items-center gap-2" data-sd-id="20">
+          <div class="code-block mono">
 
-              <iconify-icon icon="lucide:message-square" class="text-indigo-600"></iconify-icon>
+            <div class="flex gap-2 mb-2">
 
-              What is MCP?
+              <div class="w-3 h-3 rounded-full bg-red-500/20"></div>
 
-            </h3>
+              <div class="w-3 h-3 rounded-full bg-yellow-500/20"></div>
 
-            <p class="text-gray-600 leading-relaxed" data-sd-id="21">
+              <div class="w-3 h-3 rounded-full bg-green-500/20"></div>
 
-              The Model Context Protocol (MCP) is an open standard for connecting AI assistants to external tools. Three roles: the <strong>host</strong> (your app, e.g. Claude Desktop), its <strong>client</strong>, and the <strong>server</strong> (like this one). They speak JSON-RPC 2.0 over a transport such as Streamable HTTP: the client sends <em>initialize</em>, lists capabilities, then calls tools by name — the server executes and returns results. <a class="text-indigo-600 font-semibold" href="https://modelcontextprotocol.info/docs/">Official docs</a>.
+            </div>
 
-            </p>
+            <span class="text-green-400">$</span> mcp install agentic-cleaner<br>
 
-          </div>
+            <span class="text-gray-500">> Initializing connection to /mcp endpoint...</span><br>
 
-          <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm" data-sd-id="22">
-
-            <h3 class="text-lg font-bold mb-3 flex items-center gap-2" data-sd-id="23">
-
-              <iconify-icon icon="lucide:layers" class="text-emerald-600"></iconify-icon>
-
-              Our Role
-
-            </h3>
-
-            <p class="text-gray-600 leading-relaxed" data-sd-id="24">
-
-              We act as the bridge between your agent and your raw data. When an agent needs to clean a CSV, it calls one of our 10 tools — pure deterministic code, no AI model in the loop. Every tool carries risk annotations (read-only, destructive, needs-approval), so the assistant knows what is safe and what must ask you first.
-
-            </p>
+            <span class="text-indigo-400">> Connection established. 10 tools registered.</span>
 
           </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- Explainer -->
+
+      <section id="protocol" class="max-w-6xl mx-auto px-8 mb-32 grid md:grid-cols-2 gap-16">
+
+        <div>
+
+          <h2 class="mono text-xs font-bold text-gray-400 mb-6 uppercase tracking-widest">01 // The Protocol</h2>
+
+          <h3 class="text-2xl font-bold mb-4">What is MCP?</h3>
+
+          <p class="text-gray-600 leading-relaxed mb-6">
+
+            The Model Context Protocol defines a host-client-server architecture. The host (Claude Desktop) initiates a JSON-RPC lifecycle, discovering server tools and granting the client (the LLM) context-aware capabilities without local code execution risks.
+
+          </p>
+
+          <a href="https://modelcontextprotocol.io" id="docs-link" class="inline-flex items-center gap-2 mono text-xs border-b border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-all">
+
+            READ_OFFICIAL_DOCS <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+
+          </a>
+
+        </div>
+
+        <div>
+
+          <h2 class="mono text-xs font-bold text-gray-400 mb-6 uppercase tracking-widest">02 // The Logic</h2>
+
+          <h3 class="text-2xl font-bold mb-4">Deterministic Only</h3>
+
+          <p class="text-gray-600 leading-relaxed">
+
+            We operate as a deterministic tools-only server. When an agent requests a cleaning action, we execute defined regex and algorithmic sanitization. The model suggests the intent; we handle the execution with strict risk annotations.
+
+          </p>
 
         </div>
 
@@ -188,71 +238,61 @@
 
       <!-- Architecture Strip -->
 
-      <section class="bg-gray-50 py-20 border-y border-gray-100 mb-24 overflow-hidden" data-sd-id="25">
+      <section class="border-y border-[#e5e2db] bg-white py-16 mb-32">
 
-        <div class="max-w-7xl mx-auto px-6" data-sd-id="26">
+        <div class="max-w-6xl mx-auto px-8">
 
-          <div class="flex flex-col md:flex-row items-center justify-between gap-12" data-sd-id="27">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-8 mono text-xs">
 
-            <div class="flex flex-col items-center group" data-sd-id="28">
+            <div class="flex flex-col items-center gap-3">
 
-              <div class="w-24 h-24 bg-white rounded-2xl shadow-md flex items-center justify-center border border-gray-200 transition-transform group-hover:-translate-y-1" data-sd-id="29">
+              <div class="w-16 h-16 border border-black flex items-center justify-center">
 
-                <iconify-icon icon="lucide:cpu" class="text-4xl text-indigo-500"></iconify-icon>
-
-              </div>
-
-              <p class="mt-4 font-semibold" data-sd-id="30">Deterministic Engine</p>
-
-              <span class="text-xs text-gray-400 mono uppercase" data-sd-id="31">Logic Layer</span>
-
-            </div>
-
-
-
-            <div class="hidden md:block flex-1 h-px arch-line relative" data-sd-id="32">
-
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-gray-50 text-[10px] font-bold text-gray-400 tracking-widest" data-sd-id="33">JSON-RPC</div>
-
-            </div>
-
-
-
-            <div class="flex flex-col items-center group" data-sd-id="34">
-
-              <div class="w-24 h-24 bg-indigo-600 rounded-2xl shadow-xl flex items-center justify-center transition-transform group-hover:-translate-y-1" data-sd-id="35">
-
-                <iconify-icon icon="lucide:share-2" class="text-4xl text-white"></iconify-icon>
+                <iconify-icon icon="lucide:cpu" class="text-2xl"></iconify-icon>
 
               </div>
 
-              <p class="mt-4 font-semibold text-indigo-600" data-sd-id="36">REST API</p>
-
-              <span class="text-xs text-gray-400 mono uppercase" data-sd-id="37">/v1/*</span>
+              <span class="font-bold">DETERMINISTIC_ENGINE</span>
 
             </div>
 
+            <div class="hidden md:block flex-1 h-px bg-gray-200 relative">
 
-
-            <div class="hidden md:block flex-1 h-px arch-line relative" data-sd-id="38">
-
-               <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-gray-50 text-[10px] font-bold text-gray-400 tracking-widest" data-sd-id="39">STREAMABLE HTTP</div>
+              <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 text-[9px] text-gray-400">JSON-RPC</span>
 
             </div>
 
+            <div class="flex flex-col items-center gap-3">
 
+              <div class="w-16 h-16 bg-black text-white flex items-center justify-center">
 
-            <div class="flex flex-col items-center group" data-sd-id="40">
-
-              <div class="w-24 h-24 bg-emerald-500 rounded-2xl shadow-xl flex items-center justify-center transition-transform group-hover:-translate-y-1" data-sd-id="41">
-
-                <iconify-icon icon="lucide:terminal" class="text-4xl text-white"></iconify-icon>
+                <iconify-icon icon="lucide:share-2" class="text-2xl"></iconify-icon>
 
               </div>
 
-              <p class="mt-4 font-semibold text-emerald-600" data-sd-id="42">MCP Endpoint</p>
+              <span class="font-bold">REST_API</span>
 
-              <span class="text-xs text-gray-400 mono uppercase" data-sd-id="43">/mcp</span>
+              <span class="text-gray-400">STREAMABLE_HTTP</span>
+
+            </div>
+
+            <div class="hidden md:block flex-1 h-px bg-gray-200 relative">
+
+              <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 text-[9px] text-gray-400">TRANSPORT</span>
+
+            </div>
+
+            <div class="flex flex-col items-center gap-3">
+
+              <div class="w-16 h-16 border border-black flex items-center justify-center">
+
+                <iconify-icon icon="lucide:terminal" class="text-2xl"></iconify-icon>
+
+              </div>
+
+              <span class="font-bold text-indigo-600">MCP_ENDPOINT</span>
+
+              <span class="text-gray-400">/mcp</span>
 
             </div>
 
@@ -263,232 +303,132 @@
       </section>
 
 
-
-      <!-- Call lifecycle -->
-      <section class="max-w-7xl mx-auto px-6 mb-24" data-sd-id="43b">
-        <h2 class="text-3xl font-bold mb-2 text-center" data-sd-id="43c">One Call, Four Steps</h2>
-        <p class="text-gray-500 text-center mb-10" data-sd-id="43d">The exact lifecycle every request follows — per the MCP specification.</p>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-sd-id="43e">
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl" data-sd-id="43f">
-            <p class="mono text-xs text-indigo-600 font-bold mb-2" data-sd-id="43g">1 · INITIALIZE</p>
-            <p class="text-sm text-gray-600" data-sd-id="43h">Client and server agree on protocol version 2025-06-18 and capabilities.</p>
-          </div>
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl" data-sd-id="43i">
-            <p class="mono text-xs text-indigo-600 font-bold mb-2" data-sd-id="43j">2 · TOOLS/LIST</p>
-            <p class="text-sm text-gray-600" data-sd-id="43k">Assistant discovers the 10 tools, their schemas and risk annotations.</p>
-          </div>
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl" data-sd-id="43l">
-            <p class="mono text-xs text-indigo-600 font-bold mb-2" data-sd-id="43m">3 · TOOLS/CALL</p>
-            <p class="text-sm text-gray-600" data-sd-id="43n">Safe fixes apply at once; destructive ones return for your approval.</p>
-          </div>
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl" data-sd-id="43o">
-            <p class="mono text-xs text-indigo-600 font-bold mb-2" data-sd-id="43p">4 · DOWNLOAD</p>
-            <p class="text-sm text-gray-600" data-sd-id="43q">Time-limited links serve the cleaned file, audit report and replay script.</p>
-          </div>
-        </div>
-      </section>
 
       <!-- Tools Grid -->
 
-      <section class="max-w-7xl mx-auto px-6 mb-24" data-sd-id="44">
+      <section id="tools" class="max-w-6xl mx-auto px-8 mb-32">
 
-        <div class="flex items-end justify-between mb-12" data-sd-id="45">
+        <h2 class="mono text-xs font-bold text-gray-400 mb-8 uppercase tracking-widest">03 // Registered Tools</h2>
 
-          <div data-sd-id="46">
-
-            <h2 class="text-3xl font-bold mb-2" data-sd-id="47">Protocol Tools</h2>
-
-            <p class="text-gray-500" data-sd-id="48">Standardized functions exposed to your model context.</p>
-
-          </div>
-
-        </div>
-
-        
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4" data-sd-id="49">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-px bg-[#e5e2db] border border-[#e5e2db]">
 
           <!-- Tool 1 -->
 
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="50">
+          <div class="bg-[#fdfcf9] p-6">
 
-            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 mb-4" data-sd-id="51">Read-Only</span>
+            <span class="risk-badge bg-blue-100 text-blue-800 mb-3 inline-block">READ-ONLY</span>
 
-            <h4 class="font-bold mb-1" data-sd-id="52">scan_dataset</h4>
+            <h4 class="mono text-sm font-bold mb-2">clean_dataset</h4>
 
-            <p class="text-xs text-gray-500" data-sd-id="53">Load a file and list every data-quality problem.</p>
+            <p class="text-xs text-gray-500">Initial structural scan.</p>
 
           </div>
 
           <!-- Tool 2 -->
 
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="54">
+          <div class="bg-[#fdfcf9] p-6">
 
-            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-orange-50 text-orange-600 mb-4" data-sd-id="55">Approval</span>
+            <span class="risk-badge bg-blue-100 text-blue-800 mb-3 inline-block">READ-ONLY</span>
 
-            <h4 class="font-bold mb-1" data-sd-id="56">clean_dataset</h4>
+            <h4 class="mono text-sm font-bold mb-2">scan_dataset</h4>
 
-            <p class="text-xs text-gray-500" data-sd-id="57">Scan, fix everything safe, and export links in one call.</p>
+            <p class="text-xs text-gray-500">PII & health check.</p>
 
           </div>
 
           <!-- Tool 3 -->
 
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="58">
+          <div class="bg-[#fdfcf9] p-6">
 
-            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 mb-4" data-sd-id="59">Read-Only</span>
+            <span class="risk-badge bg-blue-100 text-blue-800 mb-3 inline-block">READ-ONLY</span>
 
-            <h4 class="font-bold mb-1" data-sd-id="60">get_cleaning_plan</h4>
+            <h4 class="mono text-sm font-bold mb-2">get_cleaning_plan</h4>
 
-            <p class="text-xs text-gray-500" data-sd-id="61">Proposed fix per problem, with risk levels.</p>
+            <p class="text-xs text-gray-500">Proposed actions.</p>
 
           </div>
 
           <!-- Tool 4 -->
 
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="62">
+          <div class="bg-[#fdfcf9] p-6">
 
-            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-orange-50 text-orange-600 mb-4" data-sd-id="63">Approval</span>
+            <span class="risk-badge bg-orange-100 text-orange-800 mb-3 inline-block">APPROVAL</span>
 
-            <h4 class="font-bold mb-1" data-sd-id="64">apply_cleaning_plan</h4>
+            <h4 class="mono text-sm font-bold mb-2">apply_cleaning_plan</h4>
 
-            <p class="text-xs text-gray-500" data-sd-id="65">Apply safe fixes; high-risk only with your approval.</p>
+            <p class="text-xs text-gray-500">Bulk modifications.</p>
 
           </div>
 
           <!-- Tool 5 -->
 
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="66">
+          <div class="bg-[#fdfcf9] p-6">
 
-            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-orange-50 text-orange-600 mb-4" data-sd-id="67">Approval</span>
+            <span class="risk-badge bg-orange-100 text-orange-800 mb-3 inline-block">APPROVAL</span>
 
-            <h4 class="font-bold mb-1" data-sd-id="68">apply_cleaning_action</h4>
+            <h4 class="mono text-sm font-bold mb-2">apply_cleaning_action</h4>
 
-            <p class="text-xs text-gray-500" data-sd-id="69">Run one specific cleaning action.</p>
+            <p class="text-xs text-gray-500">Single target fix.</p>
 
           </div>
 
           <!-- Tool 6 -->
 
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="70">
+          <div class="bg-[#fdfcf9] p-6">
 
-            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 mb-4" data-sd-id="71">Read-Only</span>
+            <span class="risk-badge bg-blue-100 text-blue-800 mb-3 inline-block">READ-ONLY</span>
 
-            <h4 class="font-bold mb-1" data-sd-id="72">preview_dataset</h4>
+            <h4 class="mono text-sm font-bold mb-2">preview_dataset</h4>
 
-            <p class="text-xs text-gray-500" data-sd-id="73">See the first rows and column types.</p>
+            <p class="text-xs text-gray-500">Head/tail data view.</p>
 
           </div>
 
           <!-- Tool 7 -->
 
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="74">
+          <div class="bg-[#fdfcf9] p-6">
 
-            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 mb-4" data-sd-id="75">Read-Only</span>
+            <span class="risk-badge bg-blue-100 text-blue-800 mb-3 inline-block">READ-ONLY</span>
 
-            <h4 class="font-bold mb-1" data-sd-id="76">export_dataset</h4>
+            <h4 class="mono text-sm font-bold mb-2">export_dataset</h4>
 
-            <p class="text-xs text-gray-500" data-sd-id="77">Download links: cleaned file, audit report, replay script.</p>
+            <p class="text-xs text-gray-500">Polished CSV output.</p>
 
           </div>
 
           <!-- Tool 8 -->
 
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="78">
+          <div class="bg-[#fdfcf9] p-6">
 
-            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 mb-4" data-sd-id="79">Read-Only</span>
+            <span class="risk-badge bg-orange-100 text-orange-800 mb-3 inline-block">APPROVAL</span>
 
-            <h4 class="font-bold mb-1" data-sd-id="80">create_upload_url</h4>
+            <h4 class="mono text-sm font-bold mb-2">create_upload_url</h4>
 
-            <p class="text-xs text-gray-500" data-sd-id="81">One-time URL for files too big to paste.</p>
+            <p class="text-xs text-gray-500">Secure ingress flow.</p>
 
           </div>
 
           <!-- Tool 9 -->
 
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="82">
+          <div class="bg-[#fdfcf9] p-6">
 
-            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-50 text-red-600 mb-4" data-sd-id="83">Destructive</span>
+            <span class="risk-badge bg-red-100 text-red-800 mb-3 inline-block">DESTRUCTIVE</span>
 
-            <h4 class="font-bold mb-1" data-sd-id="84">delete_dataset</h4>
+            <h4 class="mono text-sm font-bold mb-2">delete_dataset</h4>
 
-            <p class="text-xs text-gray-500" data-sd-id="85">Permanently delete a dataset now.</p>
+            <p class="text-xs text-gray-500">Permanent erasure.</p>
 
           </div>
 
           <!-- Tool 10 -->
 
-          <div class="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-200 transition-colors" data-sd-id="86">
+          <div class="bg-[#fdfcf9] p-6">
 
-            <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 mb-4" data-sd-id="87">Read-Only</span>
+            <span class="risk-badge bg-blue-100 text-blue-800 mb-3 inline-block">READ-ONLY</span>
 
-            <h4 class="font-bold mb-1" data-sd-id="88">list_cleaning_actions</h4>
+            <h4 class="mono text-sm font-bold mb-2">list_cleaning_actions</h4>
 
-            <p class="text-xs text-gray-500" data-sd-id="89">List every action with its risks.</p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- Safety Cards -->
-
-      <section class="max-w-7xl mx-auto px-6 mb-24" data-sd-id="90">
-
-        <h2 class="text-3xl font-bold mb-10 text-center" data-sd-id="91">Enterprise Grade Safety</h2>
-
-        <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6" data-sd-id="92">
-
-          <div class="p-6 bg-indigo-50/30 rounded-2xl border border-indigo-100" data-sd-id="93">
-
-            <iconify-icon icon="lucide:key" class="text-2xl text-indigo-600 mb-4"></iconify-icon>
-
-            <h5 class="font-bold mb-2" data-sd-id="94">Open Access</h5>
-
-            <p class="text-sm text-gray-600" data-sd-id="95">No keys to share — visitors admitted keyless, each isolated.</p>
-
-          </div>
-
-          <div class="p-6 bg-indigo-50/30 rounded-2xl border border-indigo-100" data-sd-id="96">
-
-            <iconify-icon icon="lucide:shield-check" class="text-2xl text-indigo-600 mb-4"></iconify-icon>
-
-            <h5 class="font-bold mb-2" data-sd-id="97">Client Isolation</h5>
-
-            <p class="text-sm text-gray-600" data-sd-id="98">Logical separation of all processing workflows.</p>
-
-          </div>
-
-          <div class="p-6 bg-indigo-50/30 rounded-2xl border border-indigo-100" data-sd-id="99">
-
-            <iconify-icon icon="lucide:clock" class="text-2xl text-indigo-600 mb-4"></iconify-icon>
-
-            <h5 class="font-bold mb-2" data-sd-id="100">One-Hour Expiry</h5>
-
-            <p class="text-sm text-gray-600" data-sd-id="101">Processing artifacts are purged every 60 mins.</p>
-
-          </div>
-
-          <div class="p-6 bg-indigo-50/30 rounded-2xl border border-indigo-100" data-sd-id="102">
-
-            <iconify-icon icon="lucide:globe" class="text-2xl text-indigo-600 mb-4"></iconify-icon>
-
-            <h5 class="font-bold mb-2" data-sd-id="103">SSRF Guard</h5>
-
-            <p class="text-sm text-gray-600" data-sd-id="104">Guarded URL fetching prevents internal leaks.</p>
-
-          </div>
-
-          <div class="p-6 bg-indigo-50/30 rounded-2xl border border-indigo-100" data-sd-id="105">
-
-            <iconify-icon icon="lucide:eye-off" class="text-2xl text-indigo-600 mb-4"></iconify-icon>
-
-            <h5 class="font-bold mb-2" data-sd-id="106">Zero Log Policy</h5>
-
-            <p class="text-sm text-gray-600" data-sd-id="107">No actual data content is ever written to logs.</p>
+            <p class="text-xs text-gray-500">Audit trail logs.</p>
 
           </div>
 
@@ -498,77 +438,133 @@
 
 
 
-      <!-- Pricing Table -->
+      <!-- Safety -->
 
-      <section class="max-w-4xl mx-auto px-6 mb-24" data-sd-id="108">
+      <section class="max-w-6xl mx-auto px-8 mb-32">
 
-        <div class="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm" data-sd-id="109">
+        <h2 class="mono text-xs font-bold text-gray-400 mb-8 uppercase tracking-widest">04 // Safety Constants</h2>
 
-          <table class="w-full text-left border-collapse" data-sd-id="110">
+        <div class="grid md:grid-cols-5 gap-px bg-[#e5e2db] border border-[#e5e2db]">
 
-            <thead data-sd-id="111">
+          <div class="bg-[#fdfcf9] p-8">
 
-              <tr class="bg-gray-50/50" data-sd-id="112">
+            <iconify-icon icon="lucide:key" class="text-xl mb-4"></iconify-icon>
 
-                <th class="p-6 font-bold text-gray-900 border-b border-gray-100" data-sd-id="113">Feature</th>
+            <h5 class="mono text-xs font-bold mb-2">BEARER_AUTH</h5>
 
-                <th class="p-6 font-bold text-gray-900 border-b border-gray-100" data-sd-id="114">Free Tier</th>
+            <p class="text-xs text-gray-500 leading-relaxed">Standardized token verification for session entry.</p>
 
-                <th class="p-6 font-bold text-indigo-600 border-b border-gray-100" data-sd-id="115">Pro Tier</th>
+          </div>
+
+          <div class="bg-[#fdfcf9] p-8">
+
+            <iconify-icon icon="lucide:shield-check" class="text-xl mb-4"></iconify-icon>
+
+            <h5 class="mono text-xs font-bold mb-2">ISOLATION</h5>
+
+            <p class="text-xs text-gray-500 leading-relaxed">Logical separation of workflow runtimes.</p>
+
+          </div>
+
+          <div class="bg-[#fdfcf9] p-8">
+
+            <iconify-icon icon="lucide:clock" class="text-xl mb-4"></iconify-icon>
+
+            <h5 class="mono text-xs font-bold mb-2">TTL_EXPIRY</h5>
+
+            <p class="text-xs text-gray-500 leading-relaxed">All artifacts purged automatically after 60 mins.</p>
+
+          </div>
+
+          <div class="bg-[#fdfcf9] p-8">
+
+            <iconify-icon icon="lucide:globe" class="text-xl mb-4"></iconify-icon>
+
+            <h5 class="mono text-xs font-bold mb-2">SSRF_GUARD</h5>
+
+            <p class="text-xs text-gray-500 leading-relaxed">Restricted URL fetching prevents internal leaks.</p>
+
+          </div>
+
+          <div class="bg-[#fdfcf9] p-8">
+
+            <iconify-icon icon="lucide:eye-off" class="text-xl mb-4"></iconify-icon>
+
+            <h5 class="mono text-xs font-bold mb-2">ZERO_LOGS</h5>
+
+            <p class="text-xs text-gray-500 leading-relaxed">Metadata logs only. Content never persisted.</p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- Pricing -->
+
+      <section class="max-w-4xl mx-auto px-8 mb-32">
+
+        <h2 class="mono text-xs font-bold text-gray-400 mb-8 text-center uppercase tracking-widest">05 // Quota Definition</h2>
+
+        <div class="border border-black overflow-hidden">
+
+          <table class="w-full text-left mono text-xs">
+
+            <thead>
+
+              <tr class="bg-black text-white">
+
+                <th class="p-4 border-r border-gray-700">PARAMETER</th>
+
+                <th class="p-4 border-r border-gray-700">FREE_TIER</th>
+
+                <th class="p-4">PRO_TIER</th>
 
               </tr>
 
             </thead>
 
-            <tbody class="text-sm" data-sd-id="116">
+            <tbody>
 
-              <tr data-sd-id="117">
+              <tr class="border-b border-black">
 
-                <td class="p-6 border-b border-gray-50 font-medium" data-sd-id="118">Daily Requests</td>
+                <td class="p-4 border-r border-black font-bold">DAILY_LIMIT</td>
 
-                <td class="p-6 border-b border-gray-50" data-sd-id="119">5 files / day</td>
+                <td class="p-4 border-r border-black">5 FILES / DAY</td>
 
-                <td class="p-6 border-b border-gray-50 text-indigo-600" data-sd-id="120">Unlimited</td>
-
-              </tr>
-
-              <tr data-sd-id="121">
-
-                <td class="p-6 border-b border-gray-50 font-medium" data-sd-id="122">Payload Size</td>
-
-                <td class="p-6 border-b border-gray-50" data-sd-id="123">2 MB</td>
-
-                <td class="p-6 border-b border-gray-50 text-indigo-600" data-sd-id="124">25 MB</td>
+                <td class="p-4">UNLIMITED</td>
 
               </tr>
 
-              <tr data-sd-id="125">
+              <tr class="border-b border-black">
 
-                <td class="p-6 border-b border-gray-50 font-medium" data-sd-id="126">Export formats</td>
+                <td class="p-4 border-r border-black font-bold">MAX_PAYLOAD</td>
 
-                <td class="p-6 border-b border-gray-50" data-sd-id="127">CSV only</td>
+                <td class="p-4 border-r border-black">2MB (CSV)</td>
 
-                <td class="p-6 border-b border-gray-50 text-emerald-500" data-sd-id="128">All 6 formats</td>
-
-              </tr>
-
-              <tr data-sd-id="129">
-
-                <td class="p-6 border-b border-gray-50 font-medium" data-sd-id="130">Audit report + replay script</td>
-
-                <td class="p-6 border-b border-gray-50" data-sd-id="131"><iconify-icon icon="lucide:x" class="text-gray-300"></iconify-icon></td>
-
-                <td class="p-6 border-b border-gray-50 text-emerald-500" data-sd-id="132"><iconify-icon icon="lucide:check"></iconify-icon></td>
+                <td class="p-4">25MB (ALL FORMATS)</td>
 
               </tr>
 
-              <tr data-sd-id="133">
+              <tr class="border-b border-black">
 
-                <td class="p-6 font-medium" data-sd-id="134">Support</td>
+                <td class="p-4 border-r border-black font-bold">AUDIT_REPORTS</td>
 
-                <td class="p-6 text-gray-400 font-normal" data-sd-id="135">Community</td>
+                <td class="p-4 border-r border-black">ΓÇö</td>
 
-                <td class="p-6 text-indigo-600 font-bold" data-sd-id="136">Email support</td>
+                <td class="p-4">ENABLED</td>
+
+              </tr>
+
+              <tr>
+
+                <td class="p-4 border-r border-black font-bold">REPLAY_SCRIPTS</td>
+
+                <td class="p-4 border-r border-black">ΓÇö</td>
+
+                <td class="p-4">INCLUDED</td>
 
               </tr>
 
@@ -586,40 +582,33 @@
 
     <!-- Footer -->
 
-    <footer class="bg-white border-t border-gray-100 py-12" data-sd-id="137">
+    <footer class="border-t border-[#e5e2db] py-16">
 
-      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8" data-sd-id="138">
+      <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-8">
 
-        <div class="flex items-center gap-2" data-sd-id="139">
+        <div class="flex items-center gap-3">
 
-          <div class="w-6 h-6 bg-indigo-600 rounded flex items-center justify-center" data-sd-id="140">
-
-            <iconify-icon icon="lucide:sparkles" class="text-white text-sm"></iconify-icon>
-
-          </div>
-
-          <span class="font-bold text-gray-900" data-sd-id="141">Agentic Data</span>
+          <span class="mono text-xs font-bold">AGENTIC_DATA / 2026</span>
 
         </div>
 
         
 
-        <div class="flex gap-8" data-sd-id="142">
+        <div class="flex gap-8 mono text-[10px] text-gray-400">
 
-          <a href="https://dc-mcp-26zy.onrender.com/privacy" id="footer-privacy" class="text-sm text-gray-500 hover:text-indigo-600" data-sd-id="143">Privacy Policy</a>
+          <a href="https://dc-mcp-26zy.onrender.com/privacy" id="footer-privacy" class="hover:text-black">PRIVACY.MD</a>
 
-          <a href="https://dc-mcp-26zy.onrender.com/terms" id="footer-terms" class="text-sm text-gray-500 hover:text-indigo-600" data-sd-id="144">Terms of Service</a>
+          <a href="https://dc-mcp-26zy.onrender.com/terms" id="footer-terms" class="hover:text-black">TERMS.MD</a>
 
-          <a href="https://dc-mcp-26zy.onrender.com/support" id="footer-support" class="text-sm text-gray-500 hover:text-indigo-600" data-sd-id="145">Support Desk</a>
-          <a href="https://github.com/iishanmakkar/dc-mcp" id="footer-github" class="text-sm text-gray-500 hover:text-indigo-600" data-sd-id="145">GitHub</a>
+          <a href="https://github.com/iishanmakkar/dc-mcp" id="footer-author" class="text-black font-bold">MADE BY ISHAN MAKKAR <iconify-icon icon="lucide:github"></iconify-icon></a>
 
         </div>
 
 
 
-        <div class="text-sm text-gray-400" data-sd-id="146">
+        <div class="mono text-[10px] text-gray-400 uppercase">
 
-          © 2026 Agentic Data Cleaner · Built by Ishan Makkar for the MCP Ecosystem.
+          // READY_FOR_DEPLOYMENT
 
         </div>
 
@@ -629,7 +618,7 @@
 
   </div>
 
+</body>
 
-
-</body></html>
+</html>
 
