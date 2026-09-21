@@ -314,18 +314,21 @@ def create_app(settings: Optional[Settings] = None) -> FastAPI:
 
     @app.get("/mcp", include_in_schema=False)
     def mcp_info():
-        # Browsers GET this URL when someone "visits" the endpoint. It is not a
-        # web page to use -- it explains how an MCP client connects instead.
+        steps = [
+            "1. In your AI client (Muse, Claude Desktop, ChatGPT, Cursor, VS Code, Opencode), "
+            "add a remote MCP server with the mcp_endpoint URL above.",
+        ]
+        if s.auth_mode in ("key", "either"):
+            steps.append("2. Copy your API key from the server operator.")
+            steps.append(f"3. Send header 'Authorization: Bearer <your key>' with every request.")
+        else:
+            steps.append("2. No API key required — the server accepts anonymous requests.")
+        steps.append(f"Full guide: {s.public_base_url}/install")
         return JSONResponse({
             "service": "Agentic Data Cleaner",
             "mcp_endpoint": f"{s.public_base_url}/mcp",
             "transport": "Streamable HTTP (MCP JSON-RPC via POST)",
-            "how_to_connect": [
-                "1. Copy your API key from the server operator.",
-                "2. In your AI client (Muse, Claude Desktop, ChatGPT, Cursor, VS Code, Opencode), "
-                "add a remote MCP server with the mcp_endpoint URL above.",
-                f"3. Send header 'Authorization: Bearer <your key>' with every request. Full guide: {s.public_base_url}/install",
-            ],
+            "how_to_connect": steps,
             "try_it": f"POST {s.public_base_url}/mcp with method 'tools/list'",
         })
 

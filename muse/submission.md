@@ -28,21 +28,19 @@ and reviewers will test the connector end to end.
 
 ## Anything else? (optional)
 
-> Agentic Data Cleaner is an MCP server (Streamable HTTP at `https://dc-mcp-26zy.onrender.com/mcp`, bearer-key authentication).
+> Agentic Data Cleaner is an MCP server (Streamable HTTP at `https://dc-mcp-26zy.onrender.com/mcp`, keyless — no API key required).
 > Muse does the reasoning; the connector exposes deterministic tools and never calls a third-party AI model. Safe fixes are
 > applied automatically; anything that deletes rows/columns, fills in missing values or masks personal data requires the user's
 > explicit approval for that specific change. The user's original file is never modified; working copies and download links are
-> deleted after about an hour. Tools carry read-only / destructive / open-world annotations. Test account/key: [PROVIDE ON REQUEST].
+> deleted after about an hour. Tools carry read-only / destructive / open-world annotations.
 
 ## Before you click submit -- checklist
 
-- [ ] Deployed: `fly.toml` (Fly.io) or `render.yaml` (Render) -- both configs are prepared, see README section 3
-- [ ] `python tools/preflight.py https://[YOUR-DOMAIN] YOUR_KEY` prints **ALL CHECKS PASSED** (17 checks covering exactly what reviewers will touch)
-- [ ] `API_KEYS` set (never run open), `PUBLIC_BASE_URL` and `ALLOWED_HOSTS` set to your real domain
+- [ ] Deployed: `render.yaml` (Render) -- config prepared, see README section 3
+- [ ] Server runs keyless (no API key required) -- anonymous requests accepted
+- [ ] `PUBLIC_BASE_URL` and `ALLOWED_HOSTS` set to your real domain
 - [ ] `docs/privacy-policy.md` and `docs/terms-of-service.md` filled in (no `[PLACEHOLDER]` left) and reviewed by a lawyer
-- [ ] Verified how Muse authenticates to your MCP server (bearer key vs OAuth) against Meta's current developer docs -- the
-      developer portal is login-walled from here; the server currently supports a bearer key, swappable in one function
-      (`server/app.py::_client_id`)
+- [ ] Server runs keyless -- no auth configuration needed for public access
 - [ ] Tried the connector from Muse itself with each example prompt
 - [ ] Payments: read Meta's developer terms and Stripe's availability for your country before enabling billing
       (`BILLING_ENABLED=true`)
